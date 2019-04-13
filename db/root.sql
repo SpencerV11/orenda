@@ -1,0 +1,8 @@
+-- create table client (
+--     client_id int primary key,
+--     first_name varchar(30),
+--     last_name varchar(30),
+--     email varchar(40),
+--     phone_number int,
+--     is_admin boolean
+-- );

@@ -20,4 +20,6 @@ app.use(session({
     saveUninitialized: false
 }))
 
-app.post('/auth/register', authCtrl.register) 
+app.post('/auth/register', authCtrl.register)
+app.post('/auth/login', authCtrl.login)
+app.get('/auth/client-data', authCtrl.clientData)

@@ -19,7 +19,8 @@
 }
 
 .under-main {
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     width: 100%;
     height: 70vh;
     display: flex;
@@ -73,8 +74,39 @@
 
 }
 
+
+
+.login {
+    position: absolute;
+    top: 15vh;
+    right: 45px;
+    width: 200px;
+    height: 100px;
+    background-color: lightgray;
+    border-radius: 10px;
+    border: 5px solid gray;
+    transition: .75s;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gone2 {
+    top:-100vh;
+}
+
 .input-style {
     margin: 10px;
     border: .5px solid black;
 }
 
+.book-now {
+    width: 100%;
+    height: 20vh;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

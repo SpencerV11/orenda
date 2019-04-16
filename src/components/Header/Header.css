@@ -1,0 +1,54 @@
+Link {
+  border-bottom: none;
+  text-decoration: none;
+  text-decoration-style: none;
+}
+
+.logo {
+    border-radius: 80px;
+    margin-left: 35px;
+  }
+  
+  .top-header {
+    /* background-image: url('https://images.homedepot-static.com/productImages/f5f6a666-c2ab-47a5-a151-362e0ea8cc2f/svn/advantage-wallpaper-2799-02484-90sam-64_1000.jpg'); */
+    width: 100%;
+    height: 14vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    background-color: rgba(211, 211, 211, 0.5);
+    position: fixed;
+    top: 0;
+  }
+  
+  .top-header-links {
+    display: flex;
+    width: 700px;
+    justify-content: space-around;
+    margin-right: 35px;
+    font-family: 'Arvo', serif;
+    
+  }
+  
+  .button {
+    border: none;
+    background-color: rgba(128, 128, 128, 0.205);
+    border-radius: 5px;
+    color: black;
+    border: 1px solid black;
+  }
+  
+  .link {
+    border-bottom: 2px solid black;
+  }
+  .form-box {
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+    position: absolute;
+  }
+
+  .absolute {
+    position: relative;
+  }

@@ -1,8 +1,26 @@
 -- create table client (
---     client_id int primary key,
+--     client_id serial primary key,
 --     first_name varchar(30),
 --     last_name varchar(30),
 --     email varchar(40),
+--      password text,
 --     phone_number int,
---     is_admin boolean
+--     is_admin boolean default false
 -- );
+
+-- insert into client (
+--     first_name,
+--     last_name,
+--     email,
+--     password,
+--     phone_number,
+--     is_admin
+-- ) values (
+--     'Carlee',
+--     'Voorhees',
+--     'asdf@gmail.com',
+--     'asdf',
+--     80183645,
+--     true
+-- )
+-- select * from client;

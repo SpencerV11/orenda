@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Home from './components/Home/Home'
+import Products from './components/Products/Products'
+import Promotions from './components/Promotions/Promotions'
+import Gallery from './components/Gallery/Gallery'
+import Reviews from './components/Reviews/Reviews'
+import Services from './components/Services/Services'
+import AboutMe from './components/AboutMe/AboutMe'
+import { HashRouter, Switch, Route } from 'react-router-dom'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <HashRouter>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/products" component={Products} />
+          <Route path="/promotions" component={Promotions} />
+          <Route path="/gallery" component={Gallery} />
+          <Route path="/reviews" component={Reviews} />
+          <Route path="/services" component={Services} />
+          <Route path="/aboutme" component={AboutMe} />
+        </Switch>
+      </HashRouter>
     );
   }
 }

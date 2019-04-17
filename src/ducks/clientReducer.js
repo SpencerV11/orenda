@@ -5,7 +5,6 @@ const initialState = {
 }
 
 const GET_DATA = 'GET_DATA'
-// const DESTROY_DATA = 'DESTROY_DATA'
 
 export function getData() {
     let data = axios.get('/auth/client-data').then(res => res.data)

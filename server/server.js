@@ -3,6 +3,7 @@ let express = require('express')
 let session = require('express-session')
 let massive = require('massive')
 let authCtrl = require('./controllers/authCtrl')
+let productCtrl = require('./controllers/productCtrl')
 let { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
 
 let app = express()
@@ -23,3 +24,10 @@ app.use(session({
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 app.get('/auth/client-data', authCtrl.clientData)
+app.get('/logout', (req, res) => {
+    req.session.destroy()
+    console.log('Destroyed')
+    res.redirect('http://localhost:3000/#/')
+})
+
+app.get('/api/products', productCtrl.display)

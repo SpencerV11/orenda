@@ -28,8 +28,9 @@
 -- create table product (
 --     product_id serial primary key,
 --     product_client_id int references client(client_id),
---     description text,
+--     product_line
 --     product_name varchar(30),
+--     description text,
 --     product_img text
 -- )
 

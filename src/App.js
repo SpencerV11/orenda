@@ -8,6 +8,7 @@ import Reviews from './components/Reviews/Reviews'
 import Services from './components/Services/Services'
 import AboutMe from './components/AboutMe/AboutMe'
 import { HashRouter, Switch, Route } from 'react-router-dom'
+import Footer from './components/Footer/Footer'
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
           <Route path="/reviews" component={Reviews} />
           <Route path="/services" component={Services} />
           <Route path="/aboutme" component={AboutMe} />
+          <Footer />
         </Switch>
       </HashRouter>
     );

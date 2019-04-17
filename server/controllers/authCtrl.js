@@ -43,5 +43,9 @@ module.exports = {
         } else {
             res.status(401).send('Please log in')
         }
+        
     }
+    // logOut: (req, res) => {
+    //     req.session.destroy()
+    // }
 }

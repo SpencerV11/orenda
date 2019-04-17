@@ -28,7 +28,7 @@ module.exports = {
         }
         const result = bcrypt.compareSync(login_password, clientArr[0].password)
         if(!result) {
-            return res.status(401).send({message: "Incorrect password"})
+            return res.status(200).send({message: "Incorrect password"})
         }
         req.session.user = {email: clientArr[0].email, firstName: clientArr[0].first_name, lastName: clientArr[0].last_name}
         res.status(200).send({

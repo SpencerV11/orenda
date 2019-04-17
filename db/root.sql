@@ -24,3 +24,28 @@
 --     true
 -- )
 -- select * from client;
+
+-- create table product (
+--     product_id serial primary key,
+--     product_client_id int references client(client_id),
+--     description text,
+--     product_name varchar(30),
+--     product_img text
+-- )
+
+-- create table promotion (
+--     promotion_id serial primary key,
+--     client_promotion_id int REFERENCES client(client_id),
+--     promotion_title varchar(40),
+--     description text
+-- );
+
+-- create table gallery (
+--     gallery_id serial primary key,
+--     client_picture_id int references client(client_id),
+--     before_image text,
+--     after_image text,
+--     description text,
+--     time TIMESTAMP,
+--     date date
+-- );

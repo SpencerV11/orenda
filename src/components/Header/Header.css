@@ -18,7 +18,7 @@ Link {
     align-items: center;
     border-bottom: 1px solid black;
     background-color: rgba(170, 170, 170, 0.596);
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     z-index: 10;
   }

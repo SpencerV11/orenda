@@ -25,8 +25,9 @@ class Home extends Component {
         }
     }
 
-    componentDidMount() {
-        this.props.getData()
+    componentDidMount = async () => {
+        // await this.props.getData()
+        // console.log(2222222, this.props.client)
     }
 
     toggleSignUp = () => {
@@ -47,31 +48,32 @@ class Home extends Component {
         })
     }
 
-    // async register() {
-    //     const { first_name, last_name, phone_number, email, password } = this.state
-    //     const response = await axios.post('/auth/register', {first_name, last_name, phone_number, email, password})
-    //     if(response.data.loggedIn) {
-    //         this.props.history.push('/')
-    //     }
-    //     else {
-    //         alert("Email in use.")
-    //     }
-    //     this.setState({
-    //         first_name: '',
-    //         last_name: '',
-    //         phone_number: '',
-    //         email: '',
-    //         password: '',
-    //         signup: false,
-    //         login: false
-    //     })
-    // }
+    async register() {
+        const { first_name, last_name, phone_number, email, password } = this.state
+        const response = await axios.post('/auth/register', {first_name, last_name, phone_number, email, password})
+        if(response.data.loggedIn) {
+            this.props.history.push('/')
+        }
+        else {
+            alert("Email in use.")
+        }
+        this.setState({
+            first_name: '',
+            last_name: '',
+            phone_number: '',
+            email: '',
+            password: '',
+            signup: false,
+            login: false
+        })
+    }
 
     async login() {
         const { login_email, login_password } = this.state
         const res = await axios.post('/auth/login', {login_email, login_password})
         if(res.data.loggedIn) {
-            this.props.history.push('/')
+            console.log('You are logged in')
+            
         }
         else {
             console.log("Incorrect login")
@@ -81,11 +83,13 @@ class Home extends Component {
             login_password: '',
             login: false
         })
+
+        this.props.getData()
+        console.log(this.props.client)
     }
 
     render() {
         let { signup, login } = this.state
-        console.log(this.props)
         return (
             <div>
                 <Header toggleLogin={this.toggleLogin} toggleSignUp={this.toggleSignUp} />

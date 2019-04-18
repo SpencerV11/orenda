@@ -1,7 +1,7 @@
 
 
 .reviews-main {
-    width: 85%;
+    width: 90%;
     height: 100vh;
     background-color: lightgray;
     display: grid;
@@ -15,3 +15,26 @@
     border-radius: 5px;
 }
 
+.create-review {
+    width: 50%;
+    height: 20vh;
+    background-color: gray;
+    border-radius: 80px;
+    margin: 5px;
+}
+
+.submit {
+    background-color: lightgray;
+    margin-top: 10px;
+}
+
+.review-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review-title {
+    border-bottom: 2px solid black;
+    color: black;
+}

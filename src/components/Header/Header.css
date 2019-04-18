@@ -38,6 +38,7 @@ Link {
     border-radius: 5px;
     color: black;
     border: 1px solid black;
+    font-family: 'Arvo', serif;
   }
 
   .space {

@@ -26,9 +26,9 @@ app.use(session({
 //     if(!req.session.user) {
 //         req.session.user = {
 //             client_id: 1,
-//             firstName: 'Jimmy',
-//             lastName: 'Joseph',
-//             email: 'JJ12@gmail.com'
+//             firstName: "Jimmy",
+//             lastName: "Joseph",
+//             email: "JJ12@gmail.com"
 //         }
 //     }
 //     next()
@@ -39,11 +39,12 @@ app.post('/auth/login', authCtrl.login)
 app.get('/auth/client-data', authCtrl.clientData)
 app.get('/logout', (req, res) => {
     req.session.destroy()
-    console.log('Destroyed')
     res.redirect('http://localhost:3000/#/')
 })
 
 app.get('/api/reviews', reviewCtrl.display)
 app.post('/api/review', reviewCtrl.create)
+app.delete('/api/reviews/:review_id', reviewCtrl.delete)
+app.put('/api/reviews/:review_id', reviewCtrl.update)
 
 app.get('/api/promotions', promoCtrl.display)

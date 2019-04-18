@@ -18,6 +18,9 @@
     flex-direction: column;
     /* align-content: space-around; */
     font-family: 'Arvo', serif;
+    border-bottom: 3px solid gray;
+    border-radius: 10px;
+    overflow: auto;
 }
 
 .desc {

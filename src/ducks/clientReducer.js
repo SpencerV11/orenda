@@ -7,7 +7,10 @@ const initialState = {
 const GET_DATA = 'GET_DATA'
 
 export function getData() {
-    let data = axios.get('/auth/client-data').then(res => res.data)
+    let data = axios.get('/auth/client-data').then(res => res.data).catch(error => {
+        console.log(error) 
+        return {}
+    })
     return {
         type: GET_DATA,
         payload: data

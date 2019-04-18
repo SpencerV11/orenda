@@ -7,3 +7,5 @@ insert into review (
     $2,
     $3
 );
+
+select * from review;

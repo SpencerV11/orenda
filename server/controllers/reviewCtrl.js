@@ -9,10 +9,28 @@ module.exports = {
     create: (req, res) => {
         let {description, rating } = req.body
         console.log(req.session.user)
-        let { review_client_id } = req.session.user
+        let { client_id } = req.session.user
         let db = req.app.get('db')
-        db.create_review([review_client_id, description, rating])
-        .then(() => res.status(200).send('You created a review'))
+        db.create_review([ client_id, description, rating ])
+        .then((reviews) => res.status(200).send(reviews))
+        .catch(error => console.log(error))
+    },
+    
+    delete: (req, res) => {
+        let { review_id } = req.params
+        let db = req.app.get('db')
+        db.delete_review([review_id])
+        .then(() => res.status(200).send("Deleted"))
+        .catch(error => console.log(error))
+
+    },
+    
+    update: (req, res) => {
+        let { review_id } = req.params
+        let { description, rating } = req.body
+        let db = req.app.get('db')
+        db.update_review([review_id, description, rating])
+        .then(() => res.status(200).send('Updated'))
         .catch(error => console.log(error))
     }
 }

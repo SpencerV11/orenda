@@ -30,7 +30,7 @@ module.exports = {
         if(!result) {
             return res.status(200).send({message: "Incorrect password"})
         }
-        req.session.user = {email: clientArr[0].email, firstName: clientArr[0].first_name, lastName: clientArr[0].last_name}
+        req.session.user = {client_id: clientArr[0].client_id, email: clientArr[0].email, firstName: clientArr[0].first_name, lastName: clientArr[0].last_name}
         res.status(200).send({
             message: 'Log in successful',
             loggedIn: true

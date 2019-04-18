@@ -1,0 +1,14 @@
+.flex-review-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviews-box {
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    border: 8px solid gray;
+    margin: .5em;
+    display: flex;
+}

@@ -3,7 +3,7 @@ let express = require('express')
 let session = require('express-session')
 let massive = require('massive')
 let authCtrl = require('./controllers/authCtrl')
-let productCtrl = require('./controllers/productCtrl')
+let reviewCtrl = require('./controllers/reviewCtrl')
 let { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
 
 let app = express()
@@ -21,6 +21,18 @@ app.use(session({
     saveUninitialized: false
 }))
 
+// app.use((req, res, next) => {
+//     if(!req.session.user) {
+//         req.session.user = {
+//             client_id: 1,
+//             firstName: 'Jimmy',
+//             lastName: 'Joseph',
+//             email: 'JJ12@gmail.com'
+//         }
+//     }
+//     next()
+// })
+
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 app.get('/auth/client-data', authCtrl.clientData)
@@ -30,4 +42,5 @@ app.get('/logout', (req, res) => {
     res.redirect('http://localhost:3000/#/')
 })
 
-app.get('/api/products', productCtrl.display)
+app.get('/api/reviews', reviewCtrl.display)
+app.post('/api/review', reviewCtrl.create)

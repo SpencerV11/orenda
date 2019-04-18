@@ -5,10 +5,30 @@
 }
 
 .reviews-box {
-    width: 400px;
-    height: 300px;
+    width: 100%;
+    height: 100%;
     background-color: white;
-    border: 8px solid gray;
-    margin: .5em;
+    /* border: 8px solid gray;
+    margin: .5em; */
+    /* grid-column: auto;
+    grid-row: auto; */
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* align-content: space-around; */
+    font-family: 'Arvo', serif;
+}
+
+.desc {
+    border-top: 1px solid gray;
+    width: 200px;
+}
+
+h4 {
+    border-bottom: 1px solid gray;
+}
+
+.rating {
+    margin-bottom: 30px;
 }

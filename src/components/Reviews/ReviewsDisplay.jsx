@@ -5,10 +5,9 @@ class ReviewsDisplay extends Component {
     render() {
         return (
             <div className="reviews-box">
-                <div>{this.props.review.first_name}</div>
-                <div>{this.props.review.last_name}</div>
-                <div>{this.props.review.description}</div>
-                <div>{this.props.review.rating}</div> 
+                <h4>{this.props.review.first_name} {this.props.review.last_name}</h4>
+                <div className="rating">Rating- {this.props.review.rating}/10</div> 
+                <div className="desc">Description- {this.props.review.description}</div>
             </div>
         )    
     }

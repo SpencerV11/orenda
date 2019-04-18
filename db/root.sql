@@ -50,3 +50,26 @@
 --     time TIMESTAMP,
 --     date date
 -- );
+
+-- -- select * from client;
+
+-- insert into review (
+--     review_client_id,
+--     description,
+--     rating
+-- ) values (
+--     16,
+--     'LOL I NEED THIS TO TEST SOMETHING',
+--     5
+-- );
+-- -- (
+-- --     21,
+-- --     'She helped me with my needs and I was able to come out knowing alot more about my skin',
+-- --     7
+-- -- );
+-- -- -- select * from review;
+
+-- SELECT *
+--     FROM client INNER JOIN review ON (client.client_id = review.review_client_id);
+
+-- select * from review;

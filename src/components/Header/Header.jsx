@@ -98,7 +98,7 @@ class Header extends Component {
                     {
                         firstName ? 
                         (
-                        <div className="welcome">Welcome, {firstName} {lastName} <a href="http://localhost:4000/logout"><button>Logout</button></a></div>
+                        <div className="welcome">Welcome, {firstName} {lastName} <a href="http://localhost:4000/logout"><button className="button">Logout</button></a></div>
                         ) 
                         : 
                         (

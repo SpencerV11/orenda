@@ -4,6 +4,7 @@ let session = require('express-session')
 let massive = require('massive')
 let authCtrl = require('./controllers/authCtrl')
 let reviewCtrl = require('./controllers/reviewCtrl')
+let promoCtrl = require('./controllers/promoCtrl')
 let { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
 
 let app = express()
@@ -44,3 +45,5 @@ app.get('/logout', (req, res) => {
 
 app.get('/api/reviews', reviewCtrl.display)
 app.post('/api/review', reviewCtrl.create)
+
+app.get('/api/promotions', promoCtrl.display)

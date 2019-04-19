@@ -6,8 +6,8 @@ export default class Footer extends Component {
         return (
             <div className="bottom-footer">
                 <div className="icons">
-                    <div className="big"><i className="fab fa-instagram"></i></div>
-                    <div className="big"><i className="fab fa-facebook"></i></div>
+                    <a style={{textDecoration: 'none', color: 'black'}} href="https://www.instagram.com/orenda.aesthetics/"><div className="big"><i className="fab fa-instagram footer-icons border"></i></div></a>
+                    <a style={{textDecoration: 'none', color: 'black'}} href="https://facebook.com/orenda.aesthetics/"><div className="big"><i className="fab fa-facebook footer-icons border"></i></div></a>
                 </div>
                 <div>Copywrite © All Rights Reserved</div>
                 <div></div>

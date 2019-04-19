@@ -22,8 +22,8 @@ class App extends Component {
           <Route path="/reviews" component={Reviews} />
           <Route path="/services" component={Services} />
           <Route path="/aboutme" component={AboutMe} />
-          <Footer />
         </Switch>
+          <Footer />
       </HashRouter>
     );
   }

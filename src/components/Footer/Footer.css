@@ -5,6 +5,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-top: 3px solid black;
+    margin-top: 10px;
 }
 
 .facebook {
@@ -18,4 +20,15 @@
 
 .icons {
     display: flex;
+}
+
+.footer-icons:hover {
+    color: white;
+
+}
+
+.border {
+    border-bottom: 1px solid black;
+
+    outline: none;
 }

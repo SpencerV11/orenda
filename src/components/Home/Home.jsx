@@ -33,9 +33,9 @@ class Home extends Component {
                 </div>
                 <div className="book-now">
                     <h2>Schedule your appointment today!</h2>
-                    <button>Book Now</button>
+                    <button className="button appointment">Book Now</button>
                 </div>
-                <Footer />
+                
             </div>
         )
     }

@@ -16,13 +16,11 @@ module.exports = {
         .catch(error => console.log(error))
     },
     
-    delete: (req, res) => {
+    delete: async (req, res) => {
         let { review_id } = req.params
         let db = req.app.get('db')
-        db.delete_review([review_id])
-        .then(() => res.status(200).send("Deleted"))
-        .catch(error => console.log(error))
-
+        const review = await db.delete_review([review_id])
+        res.status(200).send(review)
     },
     
     update: (req, res) => {

@@ -40,6 +40,13 @@ class Reviews extends Component {
                 description: '',
                 rating: ''
             })
+            this.getReviews()
+        }).catch(error => console.log(error))
+    }
+
+    deleteReview(review_id) {
+        axios.delete(`/api/reviews/${review_id}`).then(() => {
+            this.getReviews()
         }).catch(error => console.log(error))
     }
 
@@ -57,7 +64,8 @@ class Reviews extends Component {
                 <ReviewsDisplay
                     review={review}
                     key={review.review_id}
-                    currentClient={this.props.client.client_id} />
+                    currentClient={this.props.client.client_id}
+                    deleteReview={this.deleteReview} />
             )
         })
         return (

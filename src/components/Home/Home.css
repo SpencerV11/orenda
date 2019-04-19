@@ -94,3 +94,9 @@
     align-items: center;
     justify-content: center;
 }
+
+.appointment {
+    background-color: lightgray;
+    width: 200px;
+    height: 30px;
+}

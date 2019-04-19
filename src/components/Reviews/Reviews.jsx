@@ -22,7 +22,7 @@ class Reviews extends Component {
         
     }
 
-    getReviews() {
+    getReviews = () => {
         axios.get('/api/reviews').then(res => {
             this.setState({
                 reviews: res.data
@@ -30,7 +30,7 @@ class Reviews extends Component {
         })
     }
 
-    createReview() {
+    createReview = () => {
         let { description, rating } = this.state
         // let {firstName, lastName } = this.props.client
         
@@ -40,13 +40,16 @@ class Reviews extends Component {
                 description: '',
                 rating: ''
             })
-            this.getReviews()
         }).catch(error => console.log(error))
     }
 
-    deleteReview(review_id) {
-        axios.delete(`/api/reviews/${review_id}`).then(() => {
-            this.getReviews()
+    deleteReview = (review_id) => {
+        axios.delete(`/api/reviews/${review_id}`).then((res) => {
+            
+            this.setState({
+                reviews: res.data
+            })
+            
         }).catch(error => console.log(error))
     }
 

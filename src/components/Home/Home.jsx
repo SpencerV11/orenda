@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Header from '../Header/Header'
-import Footer from './../Footer/Footer'
 import './Home.css'
 import background from './backgrounds/background1.jpeg'
 import { Link } from 'react-router-dom'

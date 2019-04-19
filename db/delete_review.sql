@@ -1,4 +1,4 @@
 delete from review
 where review_id = $1;
 
-select * from review;
+SELECT * FROM client INNER JOIN review ON (client.client_id = review.review_client_id);

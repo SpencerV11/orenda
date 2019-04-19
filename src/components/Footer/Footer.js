@@ -9,7 +9,7 @@ export default class Footer extends Component {
                     <a style={{textDecoration: 'none', color: 'black'}} href="https://www.instagram.com/orenda.aesthetics/"><div className="big"><i className="fab fa-instagram footer-icons border"></i></div></a>
                     <a style={{textDecoration: 'none', color: 'black'}} href="https://facebook.com/orenda.aesthetics/"><div className="big"><i className="fab fa-facebook footer-icons border"></i></div></a>
                 </div>
-                <div>Copywrite © All Rights Reserved</div>
+                <div>Copyright © All Rights Reserved</div>
                 <div></div>
                 <div></div>
             </div>

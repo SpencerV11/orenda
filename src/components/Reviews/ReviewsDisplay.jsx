@@ -12,7 +12,6 @@ class ReviewsDisplay extends Component {
 
     
     render() {
-        console.log(this.props.client)
         return this.props.currentClient === this.props.review.review_client_id || this.props.client.admin === true   ? (
             <div className="reviews-box">
                 <div className="button absolute2">

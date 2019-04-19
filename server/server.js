@@ -5,6 +5,7 @@ let massive = require('massive')
 let authCtrl = require('./controllers/authCtrl')
 let reviewCtrl = require('./controllers/reviewCtrl')
 let promoCtrl = require('./controllers/promoCtrl')
+let servicesCtrl = require('./controllers/servicesCtrl')
 let { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
 
 let app = express()
@@ -48,3 +49,5 @@ app.delete('/api/reviews/:review_id', reviewCtrl.delete)
 app.put('/api/reviews/:review_id', reviewCtrl.update)
 
 app.get('/api/promotions', promoCtrl.display)
+
+app.get('/api/services', servicesCtrl.display)

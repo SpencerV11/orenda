@@ -73,3 +73,74 @@
 --     FROM client INNER JOIN review ON (client.client_id = review.review_client_id);
 
 -- select * from review;
+insert into service (
+--     service_title,
+--     service_desc,
+--     time_limit,
+--     service_cost
+-- ) values (
+--     'Glow Peel Facial',
+--     'A facial with a Superficial chemical peel to give your skin a nice glow! Great for events and also for mild breakouts!',
+--     60,
+--     '65'
+-- ), 
+-- (
+--     'Acne Facial',
+--     'Dermaplaning with a superficial chemical peel OR Ultrasonic with a superficial chemical peel to help with breakouts and maintain acne prone skin!',
+--     60,
+--     '90'
+-- ), 
+-- (
+--     'Dermaplaning',
+--     'Removes Vellus facial hair and dead skin cells to improve texture',
+--     60,
+--     '50'
+-- ) ,
+-- (
+--     'MicroPeel Combo',
+--     'Micro-Needling with a chemical peel! This is a 2 in 1 treatment which helps improve aging, texture, pores, skin tone, dullness, and pigmentation. *MOST POPULAR*',
+--     75,
+--     '175'
+-- ),
+-- (
+--     'Brow Wax',
+--     'NO DESCRIPTION',
+--     45,
+--     '15'
+-- ),
+-- (
+--     'Lash Tint',
+--     'No DESCRIPTION',
+--     45,
+--     '15'
+-- ),
+-- (
+--     'Facial (relaxing)',
+--     'A nice relaxing cleanse and hydrating treatment for your skin! *Comes with a neck and décolleté massage',
+--     60,
+--     '60'
+-- ),
+-- (
+--     'Ultrasonic Extractions',
+--     'Deep skin cleanse and extractions! Clogged Pores Excess Oil Blackheads/whiteheads Dry Skin Dull Skin Polluted Skin',
+--     45,
+--     '40'
+-- ),
+-- (
+--     'Nose Wax',
+--     'No DESCRIPTION',
+--     15,
+--     '10'
+-- ),
+-- (
+--     'Dermaplaning/Chemical Peel',
+--     '2 in 1 Treatment',
+--     60,
+--     '125'
+-- ),
+-- (
+--     'TCA Chemical Peel',
+--     'TCA (Trichloroacetic Acid) is a non-toxic, non-traumatic, medium depth chemical peel that has been used professionally for decades. TCA has the advantages of reaching slightly deeper into the skin than Alpha-Hydroxy Acids (Glycolic, Lactic, Malic, Tartaric & Citric), and in being suitable for most skin types, including darker toned skin. ***Proven very effective in treating blotchiness, sun damage, pigmentation, melasma, and fine lines & wrinkles, TCA creates a fresh, natural appearing complextion - revealing a fresh, smooth, and natural appearance to the skin. ***Price includes a FREE post care product Bag!',
+--     60,
+--     '115'
+-- );

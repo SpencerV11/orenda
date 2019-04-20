@@ -8,7 +8,7 @@ const GET_SERVICES = 'GET_SERVICES'
 
 export function getServices() {
     let data = axios.get('/api/services').then(res => {
-        res.data
+        return res.data
     })
     return {
         type: GET_SERVICES,

@@ -79,7 +79,7 @@ class Reviews extends Component {
                     <div className="review-flex">
                         <h3 className="review-title">Help Carlee know how well she is doing by giving her a review!</h3>
                         <input value={this.state.description} name="description" onChange={(e) => this.handleChange('description', e.target.value)} placeholder="Description"></input>
-                        <input value={this.state.rating} name="rating" onChange={(e) => this.handleChange('rating', e.target.value)} placeholder="Rating 1/10"></input>
+                        <input value={this.state.rating} name="rating" onChange={(e) => this.handleChange('rating', e.target.value)} placeholder="Rating 1 - 10"></input>
                         <button onClick={() => this.createReview()} className="button submit">SUBMIT</button>
                     </div>
                 </div>

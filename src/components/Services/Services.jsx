@@ -29,14 +29,19 @@ class Services extends Component {
         let map = services.map(service => {
             return (
                 <ServicesDisplay
-                    service={service}
+                    services={service}
                     key={service.service_id} />
             )
         })
         return (
             <div>
                 <Header />
-                {map}
+
+                <div className="services-main">
+                    {/* <div className="service-box"> */}
+                        {map}
+                    {/* </div> */}
+                </div>
             </div>
         )
     }

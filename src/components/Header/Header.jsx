@@ -94,7 +94,7 @@ class Header extends Component {
         return (
             <div className="body">
                 <div className="top-header">
-                    <Link to="/"><img className="logo" src={pic} alt="logo" width="250" height="100" /></Link>
+                    <Link to="/"><img className="logo" src={pic} alt="logo"/></Link>
                     {
                         firstName ? 
                         (

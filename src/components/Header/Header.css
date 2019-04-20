@@ -10,9 +10,9 @@ Link {
     height: 85px;
     margin-left: 60px;
   }
-
+  
   .logo:hover {
-    border: 1px solid rgb(175, 206, 0);
+    transition: translate-x(10px);
   }
   
   .top-header {

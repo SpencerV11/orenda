@@ -73,7 +73,8 @@
 --     FROM client INNER JOIN review ON (client.client_id = review.review_client_id);
 
 -- select * from review;
-insert into service (
+
+-- insert into service (
 --     service_title,
 --     service_desc,
 --     time_limit,
@@ -143,4 +144,21 @@ insert into service (
 --     'TCA (Trichloroacetic Acid) is a non-toxic, non-traumatic, medium depth chemical peel that has been used professionally for decades. TCA has the advantages of reaching slightly deeper into the skin than Alpha-Hydroxy Acids (Glycolic, Lactic, Malic, Tartaric & Citric), and in being suitable for most skin types, including darker toned skin. ***Proven very effective in treating blotchiness, sun damage, pigmentation, melasma, and fine lines & wrinkles, TCA creates a fresh, natural appearing complextion - revealing a fresh, smooth, and natural appearance to the skin. ***Price includes a FREE post care product Bag!',
 --     60,
 --     '115'
+-- );
+
+
+-- create table gallery (
+--     gallery_id serial primary key,
+--     client_gallery_id int references client (client_id),
+--     before_img text,
+--     after_img text,
+--     description text,
+--     gallery_service_title varchar(40)
+-- );
+
+-- create table product (
+--     product_id serial primary key,
+--     product_line varchar(40),
+--     product_desc text,
+--     product_img text
 -- );

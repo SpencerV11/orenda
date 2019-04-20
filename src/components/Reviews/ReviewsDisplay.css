@@ -13,7 +13,6 @@
     /* grid-column: auto;
     grid-row: auto; */
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     /* align-content: space-around; */
@@ -31,6 +30,7 @@
 
 h4 {
     border-bottom: 1px solid gray;
+    margin-top: 45px;
 }
 
 .rating {
@@ -47,4 +47,8 @@ h4 {
     position: absolute;
     top: 3px;
     left: 3px;
+}
+
+.button-margin {
+    margin-top: 10px;
 }

@@ -25,10 +25,13 @@ module.exports = {
     
     update: (req, res) => {
         let { review_id } = req.params
-        let { description, rating } = req.body
+        let { editDesc, editRating } = req.body
         let db = req.app.get('db')
-        db.update_review([review_id, description, rating])
-        .then((reviews) => res.status(200).send(reviews))
+        db.update_review([review_id, editDesc,editRating])
+        .then((reviews) => {
+            console.log(reviews)
+            res.status(200).send(reviews)
+        }) 
         .catch(error => console.log(error))
     }
 }

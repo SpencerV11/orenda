@@ -37,10 +37,19 @@ class ReviewsDisplay extends Component {
         })
     }
 
+    handleUpdate = () => {
+        this.props.editReview(this.props.review.review_id, this.state.editDesc, this.state.editRating)
+        this.setState({
+            editDesc: '',
+            editRating: '',
+            toggleEdit: true
+        })
+    }
+
     render() {
         let { toggleEdit, editDesc, editRating } = this.state
         let { currentClient } = this.props
-        let { review_client_id } = this.props.review
+        let { review_client_id, review_id } = this.props.review
         let { admin } = this.props.client
         return currentClient === review_client_id || admin === true ? (
             <div>
@@ -63,7 +72,7 @@ class ReviewsDisplay extends Component {
                             <h4>{this.props.review.first_name} {this.props.review.last_name}</h4>
                             <input name="editRating" value={editRating} onChange={(e) => this.handleChange('editRating', e.target.value)} placeholder="change rating"></input>
                             <input name="editDesc" value={editDesc} onChange={(e) => this.handleChange('editDesc', e.target.value)} placeholder="change description"></input>
-                            <button onClick={() => this.props.editReview()} className="button button-margin">Update</button>
+                            <button onClick={this.handleUpdate} className="button button-margin">Update</button>
                         </div>
                     )
 

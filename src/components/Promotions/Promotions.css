@@ -1,0 +1,11 @@
+.display-promo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 25px;
+    font-family: 'Arvo', serif;
+    border-bottom: 5px solid black;
+}

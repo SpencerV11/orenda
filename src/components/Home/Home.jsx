@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Header from '../Header/Header'
 import './Home.css'
-import background from './backgrounds/background1.jpeg'
+import background from './backgrounds/background2.jpg'
 import { Link } from 'react-router-dom'
 
 class Home extends Component {

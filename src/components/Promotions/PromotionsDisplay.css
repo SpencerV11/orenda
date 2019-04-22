@@ -1,0 +1,10 @@
+.promotions-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:  gray;
+    width: 50%;
+    height: 20vh;
+    position: relative;
+    
+}

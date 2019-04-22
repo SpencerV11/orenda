@@ -13,7 +13,8 @@ class Reviews extends Component {
         this.state = {
             reviews: [],
             description: '',
-            rating: ''
+            rating: '',
+            editReviewId: null
         }
         this.getReviews = this.getReviews.bind(this)
     }
@@ -22,13 +23,6 @@ class Reviews extends Component {
         this.getReviews()
 
     }
-
-    // getReviews = async () => {
-    //     let data = await axios.get('/api/reviews').then(res => res.send(res.data))
-    //     this.setState({
-    //         reviews: data
-    //     })
-    // }
 
     async getReviews() {
         await axios.get('/api/reviews').then(res => {
@@ -61,16 +55,11 @@ class Reviews extends Component {
         }).catch(error => console.log(error))
     }
 
-    editReview = () => {
-        let { editDesc, editRating } = this.state
-        let { review_id } = this.state.review
+    editReview = (review_id, editDesc, editRating) => {
         axios.put(`/api/reviews/${review_id}`, { editDesc, editRating }).then(res => {
 
             this.setState({
-                reviews: res.data,
-                editDesc: '',
-                editRating: '',
-                toggleEdit: true
+                reviews: res.data
             })
         }).catch(error => console.log(error))
     }
@@ -82,17 +71,18 @@ class Reviews extends Component {
     }
 
     render() {
-        console.log(1111, this.state.reviews[0])
+        console.log(1111, this.state)
         let { reviews } = this.state
         // console.log(reviews)
-        let map = reviews.map(review => {
+        let map = reviews.map((review, i) => {
             return (
                 <ReviewsDisplay
                     review={review}
                     key={review.review_id}
                     currentClient={this.props.client.client_id}
                     deleteReview={this.deleteReview}
-                    editReview={this.editReview} />
+                    editReview={this.editReview}
+                    id={i} />
             )
         })
         return (

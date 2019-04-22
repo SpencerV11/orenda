@@ -3,20 +3,27 @@ import Header from '../Header/Header'
 import './Services.css'
 import ServicesDisplay from './ServicesDisplay';
 import axios from 'axios';
+import { getData } from './../../ducks/clientReducer'
+import { connect } from 'react-redux'
 
 class Services extends Component {
     constructor() {
         super()
 
         this.state = {
-            services: []
+            services: [],
+            service_title: '',
+            service_desc: '',
+            time_limit: '',
+            service_cost: ''
         }
     }
     componentDidMount() {
+        this.props.getData()
         this.getServices()
     }
 
-    getServices() {
+    getServices = () => {
         axios.get('/api/services').then(res => {
             this.setState({
                 services: res.data
@@ -24,27 +31,70 @@ class Services extends Component {
         })
     }
 
+    createService = () => {
+        let { service_title, service_desc, time_limit, service_cost } = this.state
+        axios.post('/api/service', { service_title, service_desc, time_limit, service_cost }).then(res => {
+            this.setState({
+                services: res.data,
+                service_title: '',
+                service_desc: '',
+                time_limit: '',
+                service_cost: ''
+            })
+        }).catch(error => console.log(error))
+    }
+
+    deleteService(review_id) {
+        axios.delete(`/api/services/${review_id}`).then( res => {
+            this.setState({
+                services: res.data
+            })
+        }).catch(error => console.log(error))
+    }
+
+    handleChange = (name, value) => {
+        this.setState({
+            [name]: value
+        })
+    }
+
     render() {
         const { services } = this.state
+        let { admin } = this.props.client
         let map = services.map(service => {
             return (
                 <ServicesDisplay
+                    deleteService={this.deleteService}
                     services={service}
                     key={service.service_id} />
             )
         })
-        return (
+        return admin ? (
             <div>
                 <Header />
-
+                <div className="create-center">
+                    <input value={this.state.time_limit} name="time_limit" onChange={(e) => this.handleChange('time_limit', e.target.value)} placeholder="Time limit of service"></input>
+                    <input value={this.state.service_cost} name="service_cost" onChange={(e) => this.handleChange('service_cost', e.target.value)}  placeholder="Cost of service"></input>
+                    <input value={this.state.service_title} name="service_title" onChange={(e) => this.handleChange('service_title', e.target.value)}  placeholder="Service Title"></input>
+                    <input value={this.state.service_desc} name="service_desc" onChange={(e) => this.handleChange('service_desc', e.target.value)}  placeholder="Service Description"></input>
+                    <button onClick={this.createService} className="button">Create Service</button>
+                </div>
                 <div className="services-main">
-                    {/* <div className="service-box"> */}
-                        {map}
+                    {map}
                     {/* </div> */}
                 </div>
             </div>
-        )
+        ) :
+            <div>
+                <Header />
+                <div className="services-main">
+                    {map}
+                    {/* </div> */}
+                </div>
+            </div>
     }
 }
 
-export default Services
+let mapState = (reduxState) => reduxState
+
+export default connect(mapState, { getData })(Services)

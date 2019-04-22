@@ -51,3 +51,5 @@ app.put('/api/reviews/:review_id', reviewCtrl.update)
 app.get('/api/promotions', promoCtrl.display)
 
 app.get('/api/services', servicesCtrl.display)
+app.post('/api/service', servicesCtrl.create)
+app.delete('/api/services/:service_id', servicesCtrl.delete)

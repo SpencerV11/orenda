@@ -71,7 +71,6 @@ class Reviews extends Component {
     }
 
     render() {
-        console.log(1111, this.state)
         let { reviews } = this.state
         // console.log(reviews)
         let map = reviews.map((review, i) => {

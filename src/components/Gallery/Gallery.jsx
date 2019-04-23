@@ -5,12 +5,17 @@ import GalleryDisplay from './GalleryDisplay'
 import './Gallery.css'
 import { getData } from './../../ducks/clientReducer'
 import { connect } from 'react-redux'
+// import { GridLoader } from 'react-spinners'
+import Dropzone from 'react-dropzone'
+import { v4 as randomString } from 'uuid';
+
 class Gallery extends Component {
     constructor() {
         super()
 
         this.state = {
-            gallery: []
+            gallery: [],
+            url: 'http://via.placeholder.com/450x450'
         }
     }
 
@@ -27,37 +32,115 @@ class Gallery extends Component {
         })
     }
 
+    //AMAZON S3
+    getSignedRequest = ([file]) => {
+        this.setState({
+            isUploading: true
+        })
+
+        const fileName = `${randomString()}-${file.name.replace(/\s/g, '-')}`
+
+        axios.get('/api/signs-s3', {
+            params: {
+                'file-name': fileName,
+                'file-type': file.type
+            }
+        }).then((response) => {
+            const { signedRequest, url } = response.data
+            this.uploadFile(file, signedRequest, url)
+        }).catch(error => console.log(error))
+    }
+
+    uploadFile = (file, signedRequest, url) => {
+        const options = {
+            headers: {
+                'Content-Type': file.type
+            }
+        }
+        axios.put(signedRequest, file, options)
+            .then(res => {
+                this.setState({ isUploading: false, url })
+            })
+            .catch(error => {
+                this.setState({
+                    isUploading: false
+                })
+                if (error.response.status === 403) {
+                    alert(`Your request for a signed URL failed with a status 403. Double check the CORS configuration and bucket policy in the README. You also will want to double check your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY in your .env and ensure that they are the same as the ones that you created in the IAM dashboard. You may need to generate new keys\n${
+                        error.stack
+                        }`)
+                } else {
+                    alert(`Error: ${error.status}\n ${error.stack}`)
+                }
+            })
+    }
+
     render() {
+        console.log(this.state.url)
         // console.log(this.props.client)
         let { admin } = this.props.client
         let { gallery } = this.state
         let map = gallery.map(gallery => {
             return (
-                <div className="content-middle">
+                <div key={gallery.gallery_id} className="content-middle">
                     <GalleryDisplay
-                        gallery={gallery}
-                        key={gallery.gallery_id} />
+                        gallery={gallery} />
                 </div>
             )
         })
+        //AMAZON S3
+        const { url } = this.state
         return admin ? (
             <div>
                 <Header />
                 <div className="create-gallery">
-                    <input type="file" placeholder="Before picture"></input>
-                    <input type="file" placeholder="After picture"></input>
-                    <input placeholder="Service"></input>
-                    <input placeholder="Service Description"></input>
-                    <button>Create</button>
+                    {/* //AMAZON S3--------------------------------------------------------------------------------- */}
+
+                    <div>
+                        <img src={url} alt="" width="200px" />
+                        <Dropzone
+                            onDropAccepted={this.getSignedRequest}
+                            style={{
+                                position: 'relative',
+                                width: 200,
+                                height: 200,
+                                borderWidth: 7,
+                                marginTop: 100,
+                                borderColor: 'rgb(102, 102, 102)',
+                                borderStyle: 'dashed',
+                                borderRadius: 5,
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                fontSize: 28,
+                            }}
+                            accept='image/*'
+                            multiple={false} >
+                            {({ getRootProps, getInputProps }) => (
+                                <section>
+                                    <div {...getRootProps()}>
+                                        <input {...getInputProps()} />
+                                        <p className="button">Select File</p>
+                                    </div>
+                                </section>
+                            )}
+                        </Dropzone>
+                    </div>
+                    <div className="flex-gall">
+                        <input placeholder="Service Title"></input>
+                        <input placeholder="Service Description"></input>
+                        <button className="button create-gall">Create</button>
+                    </div>
+
                 </div>
                 {map}
             </div>
         ) : (
-            <div>
-                <Header />
-                {map}
-            </div>
-        )
+                <div>
+                    <Header />
+                    {map}
+                </div>
+            )
     }
 }
 

@@ -156,8 +156,7 @@
 -- create table gallery (
 --     gallery_id serial primary key,
 --     client_gallery_id int references client(client_id),
---     before_img text,
---     after_img text,
+--     before_after_img text,
 --     description text,
 --     gallery_service_title varchar(40)
 -- );

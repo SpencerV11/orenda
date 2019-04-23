@@ -15,12 +15,8 @@ class GalleryDisplay extends Component {
             <div className="gallery-box">
                 <div className="flex-pic">
                     <div className="relative">
-                        <div className="absolute2">BEFORE</div>
-                        <img className="img-size" src={this.props.gallery.before_img} alt="before service"></img>
-                    </div>
-                    <div className="relative">
-                        <div className="absolute2">AFTER</div>
-                        <img className="img-size" src={this.props.gallery.after_img} alt="after service"></img>
+                        <div className="absolute2">BEFORE/AFTER</div>
+                        <img className="img-size" src={this.props.gallery.before_after_img} alt="before service"></img>
                     </div>
                     <div className="flex-desc">
                         <div className="gallery-title">{this.props.gallery.gallery_service_title}</div>

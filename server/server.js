@@ -7,6 +7,7 @@ let reviewCtrl = require('./controllers/reviewCtrl')
 let promoCtrl = require('./controllers/promoCtrl')
 let servicesCtrl = require('./controllers/servicesCtrl')
 let galleryCtrl = require('./controllers/galleryCtrl')
+let s3Ctrl = require('./controllers/s3Ctrl')
 let { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
 
 let app = express()
@@ -35,6 +36,8 @@ app.use(session({
 //     }
 //     next()
 // })
+
+app.get('/api/signs-s3', s3Ctrl.get)
 
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)

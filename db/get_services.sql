@@ -1,1 +1,2 @@
-select * from service;
+select * from service
+order by service_id desc;

@@ -18,5 +18,15 @@ module.exports = {
         let db = req.app.get('db')
         db.delete_service([service_id])
         .then((services) => res.status(200).send(services))
+    },
+
+    update: (req, res) => {
+        let { service_id } = req.params
+        let { service_title, service_desc, time_limit, service_cost } = req.body
+        console.log(service_id)
+        console.log(req.body)
+        let db = req.app.get('db')
+        db.update_service([service_id, service_title, service_desc, time_limit, service_cost])
+        .then((services) => res.status(200).send(services))
     }
 }

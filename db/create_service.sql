@@ -10,4 +10,5 @@ insert into service (
     $4
 );
 
-select * from service;
+select * from service
+order by service_id desc;

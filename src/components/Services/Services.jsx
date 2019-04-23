@@ -33,7 +33,7 @@ class Services extends Component {
 
     createService = () => {
         let { service_title, service_desc, time_limit, service_cost } = this.state
-        axios.post('/api/service', { service_title, service_desc, time_limit, service_cost }).then(res => {
+        axios.post('/api/service', { service_title, service_desc, time_limit, service_cost }).then(res => { 
             this.setState({
                 services: res.data,
                 service_title: '',
@@ -44,8 +44,8 @@ class Services extends Component {
         }).catch(error => console.log(error))
     }
 
-    deleteService(review_id) {
-        axios.delete(`/api/services/${review_id}`).then( res => {
+    deleteService = (service_id) => {
+        axios.delete(`/api/services/${service_id}`).then( res => {
             this.setState({
                 services: res.data
             })
@@ -58,6 +58,14 @@ class Services extends Component {
         })
     }
 
+    editService = (service_id, service_title, service_desc, time_limit, service_cost) => {
+        axios.put(`/api/services/${service_id}`, {service_title, service_desc, time_limit, service_cost}).then(res => {
+            this.setState({
+                services: res.data
+            })
+        }).catch(error => console.log(error))
+    }
+
     render() {
         const { services } = this.state
         let { admin } = this.props.client
@@ -66,7 +74,8 @@ class Services extends Component {
                 <ServicesDisplay
                     deleteService={this.deleteService}
                     services={service}
-                    key={service.service_id} />
+                    key={service.service_id}
+                    editService={this.editService} />
             )
         })
         return admin ? (

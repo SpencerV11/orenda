@@ -94,4 +94,5 @@ Link {
 .welcome {
   font-size: 18px;
   font-family: 'Arvo', serif;
+  border-bottom: 2px solid gold;
 }

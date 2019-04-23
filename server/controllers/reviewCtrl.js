@@ -27,7 +27,7 @@ module.exports = {
         let { review_id } = req.params
         let { editDesc, editRating } = req.body
         let db = req.app.get('db')
-        db.update_review([review_id, editDesc,editRating])
+        db.update_review([review_id, editDesc, editRating])
         .then((reviews) => {
             console.log(reviews)
             res.status(200).send(reviews)

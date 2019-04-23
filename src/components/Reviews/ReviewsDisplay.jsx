@@ -49,7 +49,7 @@ class ReviewsDisplay extends Component {
     render() {
         let { toggleEdit, editDesc, editRating } = this.state
         let { currentClient } = this.props
-        let { review_client_id, review_id } = this.props.review
+        let { review_client_id } = this.props.review
         let { admin } = this.props.client
         return currentClient === review_client_id || admin === true ? (
             <div>

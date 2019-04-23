@@ -25,6 +25,19 @@ class ServicesDisplay extends Component {
         this.props.deleteService(service_id)
     }
 
+    handleEdit = () => {
+        let { service_id } = this.props.services
+        let { edit_service_title, edit_service_desc, edit_time_limit, edit_service_cost } = this.state
+        this.props.editService(service_id, edit_service_title, edit_service_desc, edit_time_limit, edit_service_cost)
+        this.setState({
+            edit_time_limit: '',
+            edit_service_title: '',
+            edit_service_cost: '',
+            edit_service_desc: '',
+            toggleEdit: true
+        })
+    }
+
     handleChange = (name, value) => {
         this.setState({
             [name]: value
@@ -64,7 +77,7 @@ class ServicesDisplay extends Component {
                                 <input value={this.state.edit_service_desc} name="edit_service_desc" onChange={(e) => this.handleChange('edit_service_desc', e.target.value)} placeholder="Service Description"></input>
                                 <div className="edit-display2">
                                     <button onClick={() => this.setState({toggleEdit: true, edit_time_limit: '', edit_service_title: '', edit_service_cost: '', edit_service_desc: ''})} className="button">Back</button>
-                                    <button className="button">Submit Change</button>
+                                    <button onClick={this.handleEdit} className="button">Submit Change</button>
                                 </div>
                             </div>
                         </div>

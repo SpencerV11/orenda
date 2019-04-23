@@ -26,7 +26,7 @@ class AboutMe extends Component {
                 </div>
             </div>
         )
-    }
+    } 
 }
 
 export default AboutMe

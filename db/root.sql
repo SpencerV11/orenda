@@ -41,16 +41,6 @@
 --     description text
 -- );
 
--- create table gallery (
---     gallery_id serial primary key,
---     client_picture_id int references client(client_id),
---     before_image text,
---     after_image text,
---     description text,
---     time TIMESTAMP,
---     date date
--- );
-
 -- -- select * from client;
 
 -- insert into review (
@@ -161,4 +151,13 @@
 --     product_line varchar(40),
 --     product_desc text,
 --     product_img text
+-- );
+
+-- create table gallery (
+--     gallery_id serial primary key,
+--     client_gallery_id int references client(client_id),
+--     before_img text,
+--     after_img text,
+--     description text,
+--     gallery_service_title varchar(40)
 -- );

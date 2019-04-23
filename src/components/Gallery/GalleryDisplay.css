@@ -1,0 +1,41 @@
+.gallery-box {
+    margin: 5px;
+    border: 1px solid black;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-size {
+    width: 400px;
+
+}
+
+.flex-pic {
+    display: flex;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute2 {
+    position: absolute;
+    color: white;
+    
+}
+
+.flex-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-title {
+    border-bottom: 2px solid black;
+    margin-bottom: 3%;
+}
+
+.gallery-desc {
+    margin: 0px 10%;
+}

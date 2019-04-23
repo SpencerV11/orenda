@@ -6,6 +6,7 @@ let authCtrl = require('./controllers/authCtrl')
 let reviewCtrl = require('./controllers/reviewCtrl')
 let promoCtrl = require('./controllers/promoCtrl')
 let servicesCtrl = require('./controllers/servicesCtrl')
+let galleryCtrl = require('./controllers/galleryCtrl')
 let { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
 
 let app = express()
@@ -54,3 +55,6 @@ app.get('/api/services', servicesCtrl.display)
 app.post('/api/service', servicesCtrl.create)
 app.delete('/api/services/:service_id', servicesCtrl.delete)
 app.put('/api/services/:service_id', servicesCtrl.update)
+
+app.get('/api/gallery', galleryCtrl.display)
+app.post('/api/gallery', galleryCtrl.create)

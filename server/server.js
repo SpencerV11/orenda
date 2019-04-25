@@ -8,6 +8,7 @@ let promoCtrl = require('./controllers/promoCtrl')
 let servicesCtrl = require('./controllers/servicesCtrl')
 let galleryCtrl = require('./controllers/galleryCtrl')
 let s3Ctrl = require('./controllers/s3Ctrl')
+let productsCtrl = require('./controllers/productsCtrl')
 let { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
 
 let app = express()
@@ -53,6 +54,9 @@ app.delete('/api/reviews/:review_id', reviewCtrl.delete)
 app.put('/api/reviews/:review_id', reviewCtrl.update)
 
 app.get('/api/promotions', promoCtrl.display)
+app.post('/api/promotion', promoCtrl.create)
+app.delete('/api/promotion/:promotion_id', promoCtrl.delete)
+app.put('/api/promotion/:promotion_id', promoCtrl.update)
 
 app.get('/api/services', servicesCtrl.display)
 app.post('/api/service', servicesCtrl.create)
@@ -61,3 +65,9 @@ app.put('/api/services/:service_id', servicesCtrl.update)
 
 app.get('/api/gallery', galleryCtrl.display)
 app.post('/api/gallery', galleryCtrl.create)
+app.delete('/api/gallery/:gallery_id', galleryCtrl.delete)
+
+app.get('/api/products', productsCtrl.display)
+app.post('/api/product', productsCtrl.create)
+app.put('/api/products/:product_id', productsCtrl.update)
+app.delete('/api/products/:product_id', productsCtrl.delete)

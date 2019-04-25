@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
 import Header from '../Header/Header'
 import './Home.css'
-import background from './backgrounds/background2.jpg'
 import { Link } from 'react-router-dom'
+import Carousel from '../Carousel/Carousel'
 
 class Home extends Component {
 
     render() {
         return (
             <div>
-                <Header/>
-                <div className="main-content">
+                <Header />
+                {/* <div className="main-content">
                     <img className="background" src={background} alt="pic" />
-                </div>
+                </div> */}
+                <Carousel />
                 <div className="under-main">
                     <div className="box-display">
                         <div className="title">Promotions</div>
@@ -34,7 +35,7 @@ class Home extends Component {
                     <h2>Schedule your appointment today!</h2>
                     <button className="button appointment">Book Now</button>
                 </div>
-                
+
             </div>
         )
     }

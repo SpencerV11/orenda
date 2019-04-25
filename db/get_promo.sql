@@ -1,1 +1,1 @@
-select client_id, is_admin, promotion_id, client_promotion_id, promotion_title, description, ex_date from client inner join promotion on (client.client_id = promotion.client_promotion_id);
+select * from promotion;

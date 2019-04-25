@@ -1,9 +1,25 @@
-.promotions-display {
+.circle-display {
+    width: 500px;
+    height: 500px;
+    background-color: pink;
+    border-radius: 200px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    background-color:  gray;
-    width: 80%;
-    height: 20vh;
-    position: relative;
+    justify-content: space-between;
+    margin: 2%;
+    box-shadow: 10px;
+    border: 1px solid black;
+}
+
+.promo-title {
+    margin-top: 20px;
+}
+
+.promo-date {
+    margin-bottom: 20px;
+}
+
+.promo-desc {
+    margin: 0px 20px;
 }

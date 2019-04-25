@@ -1,0 +1,31 @@
+.slides {
+    width: 100%;
+}
+
+.carousel {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 86vh;
+}
+
+.nextpre-button {
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+
+.nextpre-button2 {
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
+.pic {
+    width: 100%;
+    height: 100vh;
+}
+
+.size {
+    background-size: contain;
+}

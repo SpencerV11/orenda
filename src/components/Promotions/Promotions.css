@@ -2,11 +2,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    background-color: white;
 }
 
 .title {
     font-size: 25px;
     font-family: 'Arvo', serif;
     border-bottom: 5px solid black;
+}
+
+.map-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.create-promo {
+    width: 100%;
+    height: 8vh;
+    background-color: silver;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

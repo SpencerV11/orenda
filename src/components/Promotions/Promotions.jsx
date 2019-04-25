@@ -10,7 +10,10 @@ class Promotions extends Component {
         super()
 
         this.state = {
-            promotions: []
+            promotions: [],
+            promotion_title: '',
+            promotion_description: '',
+            promotion_expiration: ''
         }
     }
     componentDidMount() {
@@ -26,6 +29,10 @@ class Promotions extends Component {
         })
     }
 
+    createPromotion() {
+    
+    }
+
     render() {
         let { promotions } = this.state
         let map = promotions.map((promo, i) => {
@@ -39,8 +46,16 @@ class Promotions extends Component {
             <div>
                 <Header />
                 <div className="display-promo">
+                    <div className="create-promo">
+                        <input placeholder="Promotion Title"></input>
+                        <input placeholder="Promotion Description"></input>
+                        <input placeholder="Expiration Date"></input>
+                        <button>Submit</button>
+                    </div>
                     <h1 className="title">Promotions</h1>
-                    {map}
+                    <div className="map-box">
+                        {map}
+                    </div>
                 </div>
             </div>
         )

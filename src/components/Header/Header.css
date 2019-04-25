@@ -23,7 +23,7 @@ Link {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgb(175, 206, 0);
-    background-color: rgba(199, 199, 199, 0.897);
+    background-color: rgba(199, 199, 199, 0.6);
     position: relative;
     /* position: fixed; */
     top: 0;
@@ -46,6 +46,7 @@ Link {
     color: black;
     border: 1px solid black;
     font-family: 'Arvo', serif;
+    font-size: 14px;
   }
   .button:hover {
     border: 1px solid rgba(109, 109, 109, 0.466);

@@ -16,11 +16,12 @@
 }
 
 .create-review {
-    width: 50%;
-    height: 20vh;
+    width: 100%;
+    height: 40vh;
     background-color: gray;
-    border-radius: 80px;
-    margin: 5px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    margin-bottom: 10px;
 }
 
 .submit {
@@ -37,4 +38,5 @@
 .review-title {
     border-bottom: 2px solid black;
     color: black;
+    margin-top: 15vh;
 }

@@ -24,7 +24,7 @@ class Services extends Component {
     }
 
     getServices = () => {
-        axios.get('/api/services').then(res => {
+        axios.get(`/api/services`).then(res => {
             this.setState({
                 services: res.data
             })
@@ -33,7 +33,7 @@ class Services extends Component {
 
     createService = () => {
         let { service_title, service_desc, time_limit, service_cost } = this.state
-        axios.post('/api/service', { service_title, service_desc, time_limit, service_cost }).then(res => { 
+        axios.post(`/api/service`, { service_title, service_desc, time_limit, service_cost }).then(res => { 
             this.setState({
                 services: res.data,
                 service_title: '',

@@ -4,6 +4,7 @@ import './Products.css'
 import axios from 'axios';
 import ProductDisplay from './ProductsDisplay'
 
+
 class Products extends Component {
     constructor() {
         super()
@@ -18,7 +19,7 @@ class Products extends Component {
     }
 
     getProducts = () => {
-        axios.get('/api/products').then(res => {
+        axios.get(`/api/products`).then(res => {
             this.setState({
                 products: res.data
             })

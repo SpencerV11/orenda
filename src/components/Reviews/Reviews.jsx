@@ -6,6 +6,7 @@ import axios from 'axios';
 import { getData } from './../../ducks/clientReducer'
 import { connect } from 'react-redux';
 
+
 class Reviews extends Component {
     constructor() {
         super()
@@ -25,7 +26,7 @@ class Reviews extends Component {
     }
 
     async getReviews() {
-        await axios.get('/api/reviews').then(res => {
+        await axios.get(`/api/reviews`).then(res => {
             this.setState({
                 reviews: res.data
             })
@@ -36,7 +37,7 @@ class Reviews extends Component {
         let { description, rating } = this.state
         // let {firstName, lastName } = this.props.client
 
-        axios.post('/api/review', { description, rating }).then(res => {
+        axios.post(`/api/review`, { description, rating }).then(res => {
             this.setState({
                 reviews: res.data,
                 description: '',

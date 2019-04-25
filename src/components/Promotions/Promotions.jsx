@@ -4,7 +4,6 @@ import './Promotions.css'
 import axios from 'axios'
 import PromotionsDisplay from './PromotionsDisplay'
 
-
 class Promotions extends Component {
     constructor() {
         super()
@@ -21,7 +20,7 @@ class Promotions extends Component {
     }
 
     getPromotions() {
-        axios.get('/api/promotions').then(res => {
+        axios.get(`/api/promotions`).then(res => {
             // console.log("PROMOTIONS", res.data)
             this.setState({
                 promotions: res.data

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import { getData } from './../../ducks/clientReducer'
+let { REACT_APP_LOGOUT } = process.env
 
 class Header extends Component {
     constructor() {
@@ -48,7 +49,7 @@ class Header extends Component {
 
     async register() {
         const { first_name, last_name, phone_number, email, password } = this.state
-        const response = await axios.post('/auth/register', { first_name, last_name, phone_number, email, password })
+        const response = await axios.post(`/auth/register`, { first_name, last_name, phone_number, email, password })
         if (response.data.loggedIn) {
             console.log("Registered Account")
         }
@@ -68,10 +69,9 @@ class Header extends Component {
 
     async login() {
         const { login_email, login_password } = this.state
-        const res = await axios.post('/auth/login', { login_email, login_password })
+        const res = await axios.post(`/auth/login`, { login_email, login_password })
         if (res.data.loggedIn) {
             this.componentDidMount()
-
         }
         else {
             console.log("Incorrect login")
@@ -110,7 +110,7 @@ class Header extends Component {
                         <Link style={{ textDecoration: 'none', color: 'black' }} to="/services"><div className="link">Services</div></Link>
                         <Link style={{ textDecoration: 'none', color: 'black' }} to="/gallery"><div className="link">Gallery</div></Link>
                         <Link style={{ textDecoration: 'none', color: 'black' }} to="/reviews"><div className="link">Reviews</div></Link>
-                        <a href="http://localhost:4000/logout"><button className="button">LOGOUT</button></a>
+                        <a href={REACT_APP_LOGOUT}><button className="button">LOGOUT</button></a>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+
 const initialState = {
     client: {}
 }
@@ -7,7 +8,7 @@ const initialState = {
 const GET_DATA = 'GET_DATA'
 
 export function getData() {
-    let data = axios.get('/auth/client-data').then(res => res.data).catch(error => {
+    let data = axios.get(`/auth/client-data`).then(res => res.data).catch(error => {
         console.log(error) 
         return {}
     })

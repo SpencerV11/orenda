@@ -26,7 +26,7 @@ class Gallery extends Component {
     }
 
     getGallery = () => {
-        axios.get('/api/gallery').then(res => {
+        axios.get(`/api/gallery`).then(res => {
             this.setState({
                 gallery: res.data
             })
@@ -35,7 +35,7 @@ class Gallery extends Component {
 
     createGallery = () => {
         let { url, gallery_service_title, description } = this.state
-        axios.post('/api/gallery', { url, gallery_service_title, description }).then(res => {
+        axios.post(`/api/gallery`, { url, gallery_service_title, description }).then(res => {
             this.setState({
                 gallery: res.data,
                 url: 'http://via.placeholder.com/450x450',
@@ -62,7 +62,7 @@ class Gallery extends Component {
 
         const fileName = `${randomString()}-${file.name.replace(/\s/g, '-')}`
 
-        axios.get('/api/signs-s3', {
+        axios.get(`/api/signs-s3`, {
             params: {
                 'file-name': fileName,
                 'file-type': file.type

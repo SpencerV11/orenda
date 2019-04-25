@@ -9,10 +9,11 @@ let servicesCtrl = require('./controllers/servicesCtrl')
 let galleryCtrl = require('./controllers/galleryCtrl')
 let s3Ctrl = require('./controllers/s3Ctrl')
 let productsCtrl = require('./controllers/productsCtrl')
-let { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
+let { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET, REACT_APP_REDIRECT } = process.env
 
 let app = express()
 
+app.use( express.static( `${__dirname}/../build` ) );
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)
     app.listen(SERVER_PORT, () => console.log(`Listening on port: ${SERVER_PORT}`))
@@ -45,7 +46,7 @@ app.post('/auth/login', authCtrl.login)
 app.get('/auth/client-data', authCtrl.clientData)
 app.get('/logout', (req, res) => {
     req.session.destroy()
-    res.redirect('http://localhost:3000/#/')
+    res.redirect(`${REACT_APP_REDIRECT}`)
 })
 
 app.get('/api/reviews', reviewCtrl.display)

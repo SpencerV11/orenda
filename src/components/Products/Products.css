@@ -1,7 +1,13 @@
 .under-header {
     width: 100%;
-    height: 14vh;
+    height: 10vh;
     background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
 .products {
@@ -14,4 +20,10 @@
     height: 100vh;
     background-color: gray;
     border: 5px solid lightgray;
+}
+
+.flex-test-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

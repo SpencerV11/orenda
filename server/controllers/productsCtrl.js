@@ -8,8 +8,8 @@ module.exports = {
 
     create: (req, res) => {
         let db = req.app.get('db')
-        let { product_line, product_desc, product_img } = req.body
-        db.create_product([product_line, product_desc, product_img])
+        let { product_line, product_desc, url } = req.body
+        db.create_product([product_line, product_desc, url])
         .then(products => res.status(200).send(products))
         .catch(error => console.log(`Your error is right here ===> ${error}`))
     },

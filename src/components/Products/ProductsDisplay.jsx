@@ -4,8 +4,10 @@ import './ProductsDisplay.css'
 class ProductsDisplay extends Component {
     render() {
         return (
-            <div>
+            <div className="product-box">
                 {this.props.product.product_line}
+                {this.props.product.product_desc}
+                <img src={this.props.product.url} alt="" width="300px" />
             </div>
         )
     }

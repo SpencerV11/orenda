@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Comfortaa', cursive;
 }
 
 .service-box3 {
@@ -20,6 +21,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    font-family: 'Comfortaa', cursive;
 }
 
 .button2 {

@@ -22,7 +22,7 @@ Link {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgb(175, 206, 0);
+    /* border-bottom: 1px solid rgb(175, 206, 0); */
     background-color: rgba(199, 199, 199, 0.6);
     position: relative;
     /* position: fixed; */
@@ -35,7 +35,7 @@ Link {
     width: 700px;
     justify-content: space-around;
     margin-right: 35px;
-    font-family: 'Arvo', serif;
+    font-family: 'Comfortaa', cursive;
     
   }
   
@@ -45,7 +45,7 @@ Link {
     border-radius: 5px;
     color: black;
     border: 1px solid black;
-    font-family: 'Arvo', serif;
+    font-family: 'Comfortaa', cursive;
     font-size: 14px;
   }
   .button:hover {
@@ -94,6 +94,6 @@ Link {
 
 .welcome {
   font-size: 18px;
-  font-family: 'Arvo', serif;
+  font-family: 'Comfortaa', cursive;
   border-bottom: 2px solid gold;
 }

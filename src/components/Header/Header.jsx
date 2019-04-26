@@ -4,8 +4,8 @@ import './Header.css'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { connect } from 'react-redux'
-import { getData } from './../../ducks/clientReducer'
-let { REACT_APP_LOGOUT } = process.env
+import { getData, killClient } from './../../ducks/clientReducer'
+import { withRouter } from 'react-router-dom'
 
 class Header extends Component {
     constructor() {
@@ -88,6 +88,11 @@ class Header extends Component {
         console.log(res.data)
     }
 
+    logout = () => {
+        this.props.killClient()
+        this.props.history.push('/services')
+    }
+
     render() {
         let { signup, login } = this.state
         let { firstName, lastName } = this.props.client
@@ -110,7 +115,7 @@ class Header extends Component {
                         <Link style={{ textDecoration: 'none', color: 'black' }} to="/services"><div className="link">Services</div></Link>
                         <Link style={{ textDecoration: 'none', color: 'black' }} to="/gallery"><div className="link">Gallery</div></Link>
                         <Link style={{ textDecoration: 'none', color: 'black' }} to="/reviews"><div className="link">Reviews</div></Link>
-                        <a href={REACT_APP_LOGOUT}><button className="button">LOGOUT</button></a>
+                        <button onClick={() => this.logout()} className="button">Logout</button>
                     </div>
                 </div>
             </div>
@@ -162,4 +167,4 @@ class Header extends Component {
 
 let mapToState = (reduxState) => reduxState
 
-export default connect(mapToState, { getData })(Header)
+export default withRouter(connect(mapToState, { killClient, getData })(Header))

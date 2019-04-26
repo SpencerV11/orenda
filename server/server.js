@@ -46,7 +46,6 @@ app.post('/auth/login', authCtrl.login)
 app.get('/auth/client-data', authCtrl.clientData)
 app.get('/logout', (req, res) => {
     req.session.destroy()
-    res.redirect(`${REACT_APP_REDIRECT}`)
 })
 
 app.get('/api/reviews', reviewCtrl.display)

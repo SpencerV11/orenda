@@ -8,8 +8,8 @@ module.exports = {
     
     create: (req, res) => {
         let db = req.app.get('db')
-        let { promotion_title, description, ex_date } = req.body
-        db.create_promo([promotion_title, description, ex_date])
+        let { promotion_title, promotion_description, promotion_expiration } = req.body
+        db.create_promo([promotion_title, promotion_description, promotion_expiration])
         .then(promos => res.status(200).send(promos))
         .catch(error => console.log(error))
     },
@@ -24,8 +24,8 @@ module.exports = {
     update: (req, res) => {
         let db = req.app.get('db')
         let { promotion_id } = req.params
-        let { promotion_title, description, ex_date } = req.body
-        db.update_promo([promotion_id, promotion_title, description, ex_date])
+        let { promo_title, promo_desc, promo_exp } = req.body
+        db.update_promo([promotion_id, promo_title, promo_desc, promo_exp])
         .then(promos => res.send(promos))
     }
 }

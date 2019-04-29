@@ -1,7 +1,6 @@
 
 .bottom-footer {
     width: 100%;
-    height: 22vh;
     background-color: lightgray;
     display: flex;
     justify-content: space-evenly;
@@ -24,16 +23,32 @@
 }
 
 .footer-icons:hover {
-    color: goldenrod;
+    color: rgb(216, 207, 83);
 
 }
 
-.border {
-    border-bottom: 1px solid black;
+.bottom-footer {
+    border-top: 2px solid gray;
+}
 
-    outline: none;
+
+.footer-icons {
+    border: none;
 }
 
 .open-time {
-    font-size: 13px;
+    font-size: 10.5px;
+}
+
+@media(max-width: 414px) {
+    .bottom-footer {
+        flex-direction: column;
+    }
+    .footer-address {
+        margin: 10px;
+    }
+
+    .open-time {
+        font-size: 14px;
+    }
 }

@@ -7,7 +7,7 @@
 
 .create-gallery {
     width: 100%;
-    height: 55vh;
+    height: 15vh;
     background-color: lightgray;
     display: flex;
     justify-content: center;
@@ -18,7 +18,9 @@
 
 .flex-gall {
     display: flex;
-    flex-direction: column;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
 }
 
 .create-gall {
@@ -26,5 +28,6 @@
 }
 
 .gallery-test-image {
-    margin-top: 20vh;
+    height: 100px;
+    width: 100px;
 }

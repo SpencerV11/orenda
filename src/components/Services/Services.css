@@ -24,3 +24,21 @@
     border-bottom-right-radius: 20px;
 
 }
+
+.title {
+    font-size: 35px;
+    font-family: 'Arvo', serif;
+    border-bottom: 3px solid black;
+    letter-spacing: 5px;
+    margin: 30px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 414px) {
+    .title {
+        width: 100%;
+        margin: 30px 0px;
+    }
+}

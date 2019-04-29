@@ -17,7 +17,7 @@
 
 .create-review {
     width: 100%;
-    height: 40vh;
+    height: 20vh;
     background-color: gray;
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 100px;
@@ -26,7 +26,6 @@
 
 .submit {
     background-color: lightgray;
-    margin-top: 10px;
 }
 
 .review-flex {

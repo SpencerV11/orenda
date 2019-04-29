@@ -20,7 +20,8 @@ class Header extends Component {
             email: '',
             password: '',
             signup: false,
-            login: false
+            login: false,
+            hamslide: true
         }
     }
 
@@ -34,9 +35,23 @@ class Header extends Component {
         })
     }
 
+    toggleLoginSlider = () => {
+        this.setState({
+            login: !this.state.login,
+            hamslide: !this.state.hamslide
+        })
+    }
+
     toggleSignUp = () => {
         this.setState({
             signup: !this.state.signup
+        })
+    }
+
+    toggleSignUpSlider = () => {
+        this.setState({
+            signup: !this.state.signup,
+            hamslide: !this.state.hamslide
         })
     }
 
@@ -81,16 +96,21 @@ class Header extends Component {
             login_password: '',
             login: false
         })
-
-
-        console.log(this.props)
-        // alert(this.props.client.firstName)
-        console.log(res.data)
     }
 
     logout = () => {
         this.props.killClient()
-        this.props.history.push('/services')
+        this.props.getData()
+        this.props.history.push('/')
+    }
+
+    logoutSlider = () => {
+        this.props.killClient()
+        this.props.getData()
+        // this.props.history.push('/')
+        this.setState({
+            hamslide: !this.state.hamslide
+        })
     }
 
     render() {
@@ -111,12 +131,22 @@ class Header extends Component {
                             )
                     }
                     <div className="top-header-links">
-                        <Link style={{ textDecoration: 'none', color: 'black' }} to="/products"><div className="link">Products</div></Link>
-                        <Link style={{ textDecoration: 'none', color: 'black' }} to="/services"><div className="link">Services</div></Link>
-                        <Link style={{ textDecoration: 'none', color: 'black' }} to="/gallery"><div className="link">Gallery</div></Link>
-                        <Link style={{ textDecoration: 'none', color: 'black' }} to="/reviews"><div className="link">Reviews</div></Link>
-                        <button onClick={() => this.logout()} className="button">Logout</button>
+                        <Link style={{ textDecoration: 'none', color: 'black' }} to="/products"><button className="button">PRODUCTS</button></Link>
+                        <Link style={{ textDecoration: 'none', color: 'black' }} to="/services"><button className="button">SERVICES</button></Link>
+                        <Link style={{ textDecoration: 'none', color: 'black' }} to="/gallery"><button className="button">GALLERY</button></Link>
+                        <Link style={{ textDecoration: 'none', color: 'black' }} to="/reviews"><button className="button">REVIEWS</button></Link>
+                        <button onClick={() => this.logout()} className="button">LOGOUT</button>
                     </div>
+                    <div className="top-header-links2">
+                        <div onClick={() => this.setState({ hamslide: !this.state.hamslide })} className="hamburger"><i className="fas fa-bars"></i></div>
+                    </div>
+                </div>
+                <div className={!this.state.hamslide ? "slider" : "slider gone"}>
+                    <Link style={{ textDecoration: 'none', color: 'black' }} to="/products"><button className="button">PRODUCTS</button></Link>
+                    <Link style={{ textDecoration: 'none', color: 'black' }} to="/services"><button className="button">SERVICES</button></Link>
+                    <Link style={{ textDecoration: 'none', color: 'black' }} to="/gallery"><button className="button">GALLERY</button></Link>
+                    <Link style={{ textDecoration: 'none', color: 'black' }} to="/reviews"><button className="button">REVIEWS</button></Link>
+                    <button onClick={() => this.logoutSlider()} className="button">LOGOUT</button>
                 </div>
             </div>
         ) :
@@ -135,14 +165,24 @@ class Header extends Component {
                                 )
                         }
                         <div className="top-header-links">
-                            <Link style={{ textDecoration: 'none', color: 'black' }} to="/products"><div className="link">Products</div></Link>
-                            <Link style={{ textDecoration: 'none', color: 'black' }} to="/services"><div className="link">Services</div></Link>
-                            <Link style={{ textDecoration: 'none', color: 'black' }} to="/gallery"><div className="link">Gallery</div></Link>
-                            <Link style={{ textDecoration: 'none', color: 'black' }} to="/reviews"><div className="link">Reviews</div></Link>
+                            <Link style={{ textDecoration: 'none', color: 'black' }} to="/products"><button className="button">PRODUCTS</button></Link>
+                            <Link style={{ textDecoration: 'none', color: 'black' }} to="/services"><button className="button">SERVICES</button></Link>
+                            <Link style={{ textDecoration: 'none', color: 'black' }} to="/gallery"><button className="button">GALLERY</button></Link>
+                            <Link style={{ textDecoration: 'none', color: 'black' }} to="/reviews"><button className="button">REVIEWS</button></Link>
                             <button onClick={this.toggleSignUp} className="button">SIGN UP</button>
-
                             <button onClick={this.toggleLogin} className="button">LOGIN</button>
                         </div>
+                        <div className="top-header-links2">
+                            <div onClick={() => this.setState({ hamslide: !this.state.hamslide })} className="hamburger"><i className="fas fa-bars"></i></div>
+                        </div>
+                    </div>
+                    <div className={!this.state.hamslide ? "slider" : "slider gone"}>
+                        <Link style={{ textDecoration: 'none', color: 'black' }} to="/products"><button className="button">PRODUCTS</button></Link>
+                        <Link style={{ textDecoration: 'none', color: 'black' }} to="/services"><button className="button">SERVICES</button></Link>
+                        <Link style={{ textDecoration: 'none', color: 'black' }} to="/gallery"><button className="button">GALLERY</button></Link>
+                        <Link style={{ textDecoration: 'none', color: 'black' }} to="/reviews"><button className="button">REVIEWS</button></Link>
+                        <button onClick={this.toggleSignUpSlider} className="button">SIGN UP</button>
+                        <button onClick={this.toggleLoginSlider} className="button">LOGIN</button>
                     </div>
                     {/* //SIGN UP CONDITIONAL RENDERING */}
                     <div className={signup ? 'sign-up' : 'sign-up gone'}>
@@ -156,7 +196,7 @@ class Header extends Component {
                     {/* //LOGIN CONDITIONAL RENDERING */}
                     <div className={login ? 'login' : 'login gone2'}>
                         <input value={this.state.login_email} name="login_email" onChange={(e) => this.handleChange('login_email', e.target.value)} className="input-style" placeholder="Email"></input>
-                        <input value={this.state.login_password} name="login_password" onChange={(e) => this.handleChange('login_password', e.target.value)} placeholder="Password"></input>
+                        <input value={this.state.login_password} name="login_password" onChange={(e) => this.handleChange('login_password', e.target.value)} className="input-style" placeholder="Password"></input>
                         <button onClick={() => this.login()} className="button space">Login</button>
                     </div>
                 </div>

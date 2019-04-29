@@ -8,8 +8,8 @@ module.exports = {
     
     create: (req, res) => {
         let db = req.app.get('db')
-        let { promotion_title, promotion_description, promotion_expiration } = req.body
-        db.create_promo([promotion_title, promotion_description, promotion_expiration])
+        let { promo_title, promo_desc, promo_exp } = req.body
+        db.create_promo([promo_title, promo_desc, promo_exp])
         .then(promos => res.status(200).send(promos))
         .catch(error => console.log(error))
     },

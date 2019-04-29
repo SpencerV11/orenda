@@ -29,3 +29,15 @@
 .size {
     background-size: contain;
 }
+
+@media (max-width: 414px) {
+    .carousel-inner {
+        display: none;
+        height: 0px;
+    }
+
+    .carousel {
+        width: 0px;
+        height: 0px;
+    }
+}

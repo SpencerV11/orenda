@@ -1,7 +1,7 @@
 insert into promotion (
-    promotion_title,
-    description,
-    ex_date
+    promo_title,
+    promo_desc,
+    promo_exp
 ) values (
     $1, 
     $2,

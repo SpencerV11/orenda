@@ -12,9 +12,9 @@ class Promotions extends Component {
 
         this.state = {
             promotions: [],
-            promotion_title: '',
-            promotion_description: '',
-            promotion_expiration: ''
+            promo_title: '',
+            promo_desc: '',
+            promo_exp: ''
         }
     }
     
@@ -33,13 +33,13 @@ class Promotions extends Component {
     }
 
     createPromotion = () => {
-        let { promotion_title, promotion_description, promotion_expiration } = this.state
-        axios.post(`/api/promotion`, { promotion_title, promotion_description, promotion_expiration }).then(res => {
+        let { promo_title, promo_desc, promo_exp } = this.state
+        axios.post(`/api/promotion`, { promo_title, promo_desc, promo_exp }).then(res => {
             this.setState({
                 promotions: res.data,
-                promotion_title: '',
-                promotion_description: '',
-                promotion_expiration: ''
+                promo_title: '',
+                promo_desc: '',
+                promo_exp: ''
             })
         })
     }
@@ -83,9 +83,9 @@ class Promotions extends Component {
                 <Header />
                 <div className="display-promo">
                     <div className="create-promo">
-                        <input onChange={(e) => this.handleChange('promotion_title', e.target.value)} name="promotion_title" value={this.state.promotion_title} placeholder="Promotion Title"></input>
-                        <input onChange={(e) => this.handleChange('promotion_description', e.target.value)} name="promotion_description" value={this.state.promotion_description} placeholder="Promotion Description"></input>
-                        <input onChange={(e) => this.handleChange('promotion_expiration', e.target.value)} name="promotion_expiration" value={this.state.promotion_expiration} placeholder="Expiration Date"></input>
+                        <input onChange={(e) => this.handleChange('promo_title', e.target.value)} name="promo_title" value={this.state.promo_title} placeholder="Promotion Title"></input>
+                        <input onChange={(e) => this.handleChange('promo_desc', e.target.value)} name="promo_desc" value={this.state.promo_desc} placeholder="Promotion Description"></input>
+                        <input onChange={(e) => this.handleChange('promo_exp', e.target.value)} name="promo_exp" value={this.state.promo_exp} placeholder="Expiration Date"></input>
                         <button onClick={this.createPromotion}>Submit</button>
                     </div>
                     <h1 className="title">Promotions</h1>

@@ -3,6 +3,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import pic1 from './backgrounds/background1.jpeg'
 import pic2 from './backgrounds/background2.jpg'
 import pic3 from './backgrounds/background3.jpeg'
+import pic4 from './backgrounds/background4.JPG'
 import './Carousel.css'
 
 class ControlledCarousel extends React.Component {
@@ -43,6 +44,13 @@ class ControlledCarousel extends React.Component {
           <Carousel.Item>
             <img
               className="d-block w-100 pic"
+              src={pic4}
+              alt="Third slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100 pic size"
               src={pic2}
               alt="Third slide"
             />

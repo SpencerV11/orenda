@@ -51,7 +51,7 @@ class Gallery extends Component {
                 gallery: res.data
             })
         })
-        .catch(error => console.log(error))
+            .catch(error => console.log(error))
     }
 
     //AMAZON S3
@@ -123,7 +123,9 @@ class Gallery extends Component {
                 <div className="create-gallery">
                     {/* //AMAZON S3--------------------------------------------------------------------------------- */}
                     <div>
-                        <div>
+                        <div className="flex-gall">
+                            <input value={this.state.gallery_service_title} name="gallery_service_title" onChange={(e) => this.handleChange('gallery_service_title', e.target.value)} placeholder="Service Title"></input>
+                            <input value={this.state.description} name="description" onChange={(e) => this.handleChange('description', e.target.value)} placeholder="Service Description"></input>
                             <img className="gallery-test-image" src={url} alt="" width="200px" />
                             <Dropzone
                                 onDropAccepted={this.getSignedRequest}
@@ -147,15 +149,11 @@ class Gallery extends Component {
                                     <section>
                                         <div {...getRootProps()}>
                                             <input {...getInputProps()} />
-                                            <p className="button">Select File</p>
+                                            <p>Select File</p>
                                         </div>
                                     </section>
                                 )}
                             </Dropzone>
-                        </div>
-                        <div className="flex-gall">
-                            <input value={this.state.gallery_service_title} name="gallery_service_title" onChange={(e) => this.handleChange('gallery_service_title', e.target.value)} placeholder="Service Title"></input>
-                            <input value={this.state.description} name="description" onChange={(e) => this.handleChange('description', e.target.value)} placeholder="Service Description"></input>
                             <button onClick={this.createGallery} className="button create-gall">Create</button>
                         </div>
                     </div>

@@ -1,16 +1,15 @@
 .aboutme-display {
     width: 100%;
-    height: 100vh;
-    background-color: rgb(255, 208, 215);
+    background-color: snow;
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-family: 'Arvo', serif;
+    font-size: 13px;
 }
 
 .carlee {
-    width: 500px;
-    height: 600px;
+    width: 400px;
     border-radius: 10px;
     border: 10px solid black;
 }
@@ -18,6 +17,19 @@
 .desc-display {
     display: flex;
     flex-direction: column;
-    height: 600px;
     width: 700px;
+    margin: 20px;
+}
+
+@media(max-width: 414px) {
+    .aboutme-display {
+        flex-direction: column;
+    }
+    .desc-display {
+        width: 80%;
+    }
+
+    .carlee {
+        margin-bottom: 20px;
+    }
 }

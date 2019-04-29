@@ -45,7 +45,6 @@ class ServicesDisplay extends Component {
     }
 
     render() {
-        console.log(this.state)
         let { admin } = this.props.client
         let { toggleEdit } = this.state
         return admin ? (
@@ -55,7 +54,7 @@ class ServicesDisplay extends Component {
                         <div className="service-box2">
                             <div className="services-flex">
                                 <div>{this.props.services.time_limit} Min</div>
-                                <h4>{this.props.services.service_title}</h4>
+                                <h4 className="service-title">{this.props.services.service_title}</h4>
                                 <div>${this.props.services.service_cost}</div>
                             </div>
                             <div className="services-book">
@@ -90,7 +89,7 @@ class ServicesDisplay extends Component {
                 <div className="service-box2">
                     <div className="services-flex">
                         <div>{this.props.services.time_limit} Min</div>
-                        <h4>{this.props.services.service_title}</h4>
+                        <h4 className="service-title">{this.props.services.service_title}</h4>
                         <div>${this.props.services.service_cost}</div>
                     </div>
                     <div className="services-book">
@@ -104,4 +103,4 @@ class ServicesDisplay extends Component {
 
 let mapState = (reduxState) => reduxState
 
-export default connect(mapState, { getData })(ServicesDisplay)
+export default connect(mapState, { getData })(ServicesDisplay)  

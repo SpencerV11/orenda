@@ -37,6 +37,7 @@
 .services-flex {
     display: flex;
     justify-content: space-between;
+    /* width: 100%; */
 }
 
 .services-book {
@@ -44,6 +45,7 @@
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
+    height: 50%;
 }
 
 .services-book::-webkit-scrollbar {
@@ -53,11 +55,23 @@
 
 .service-desc {
     margin: 0px 15px;
-    height: 65%;
+    height: 60%;
 }
 
 .edit-display2 {
     display: flex;
     justify-content: space-around;
     width: 100%;
+}
+
+@media(max-width: 414px) {
+    .service-title {
+        margin-bottom: 20px;
+    }
+    .services-flex {
+        width: 100%;
+    }
+    .service-title {
+        width: 75%;
+    }
 }

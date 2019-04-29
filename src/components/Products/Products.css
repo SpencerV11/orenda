@@ -12,14 +12,19 @@
 
 .products {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .products-main {
     width: 80%;
-    height: 100vh;
-    background-color: gray;
+    background-color: lightgray;
     border: 5px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .flex-test-image {

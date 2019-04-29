@@ -5,6 +5,8 @@ import axios from 'axios';
 import ProductDisplay from './ProductsDisplay'
 import Dropzone from 'react-dropzone'
 import { v4 as randomString } from 'uuid';
+import { connect } from 'react-redux'
+import { getData } from './../../ducks/clientReducer'
 
 
 class Products extends Component {
@@ -21,6 +23,7 @@ class Products extends Component {
 
     componentDidMount() {
         this.getProducts()
+        this.props.getData()
     }
 
     getProducts = () => {
@@ -33,12 +36,32 @@ class Products extends Component {
 
     createProduct = () => {
         let { product_line, product_desc, url } = this.state
-        axios.post('/api/product', {product_line, product_desc, url}).then(res => {
+        axios.post('/api/product', { product_line, product_desc, url }).then(res => {
+            this.setState({
+                products: res.data,
+                product_line: '',
+                product_desc: '',
+                url: 'http://via.placeholder.com/450x450'
+            })
+        })
+    }
+
+    deleteProduct = (product_id) => {
+        axios.delete(`/api/products/${product_id}`).then(res => {
             this.setState({
                 products: res.data
             })
         })
     }
+
+    updateProduct = (product_id, product_line, product_desc, product_img) => {
+        axios.put(`/api/products/${product_id}`, { product_line, product_desc, product_img }).then(res => {
+            this.setState({
+                products: res.data
+            })
+        })
+    }
+
     //Amazon S3
     getSignedRequest = ([file]) => {
         this.setState({
@@ -89,63 +112,78 @@ class Products extends Component {
     }
 
     render() {
-        console.log(this.state.url)
+        let { admin } = this.props.client
         let { products } = this.state
         let map = products.map(product => {
             return (
                 <ProductDisplay
-                key={product.product_id}
-                product={product} />
+                    key={product.product_id}
+                    product={product}
+                    deleteProduct={this.deleteProduct}
+                    updateProduct={this.updateProduct} />
             )
         })
         let { url } = this.state
-        return (
+        return admin ? (
             <div>
                 <Header />
                 <div className="header-back"></div>
                 <div className="under-header">
-                    <input onChange={(e) => this.handleChange('product_line', e.target.value)} name="product_line" value={this.state.product_line} placeholder="Product Line"></input>
-                    <input onChange={(e) => this.handleChange('product_desc', e.target.value)} name="product_desc" value={this.state.product_desc} placeholder="Product Description"></input>
+                    <input className="input-style" onChange={(e) => this.handleChange('product_line', e.target.value)} name="product_line" value={this.state.product_line} placeholder="Product Line"></input>
+                    <input className="input-style" onChange={(e) => this.handleChange('product_desc', e.target.value)} name="product_desc" value={this.state.product_desc} placeholder="Product Description"></input>
                     <div className="flex-test-image">
-                            <img src={url} alt="" width="100px" height="90px" />
-                            <Dropzone
-                                onDropAccepted={this.getSignedRequest}
-                                style={{
-                                    position: 'relative',
-                                    width: 200,
-                                    height: 200,
-                                    borderWidth: 7,
-                                    marginTop: 100,
-                                    borderColor: 'rgb(102, 102, 102)',
-                                    borderStyle: 'dashed',
-                                    borderRadius: 5,
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    fontSize: 28,
-                                }}
-                                accept='image/*'
-                                multiple={false} >
-                                {({ getRootProps, getInputProps }) => (
-                                    <section>
-                                        <div {...getRootProps()}>
-                                            <input {...getInputProps()} />
-                                            <p>Select File</p>
-                                        </div>
-                                    </section>
-                                )}
-                            </Dropzone>
-                        </div>
+                        <img src={url} alt="" width="100px" height="90px" />
+                        <Dropzone
+                            onDropAccepted={this.getSignedRequest}
+                            style={{
+                                position: 'relative',
+                                width: 200,
+                                height: 200,
+                                borderWidth: 7,
+                                marginTop: 100,
+                                borderColor: 'rgb(102, 102, 102)',
+                                borderStyle: 'dashed',
+                                borderRadius: 5,
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                fontSize: 28,
+                            }}
+                            accept='image/*'
+                            multiple={false} >
+                            {({ getRootProps, getInputProps }) => (
+                                <section>
+                                    <div {...getRootProps()}>
+                                        <input {...getInputProps()} />
+                                        <p>Select File</p>
+                                    </div>
+                                </section>
+                            )}
+                        </Dropzone>
+                    </div>
                     <button onClick={this.createProduct}>Create</button>
                 </div>
                 <div className="products">
+                    <h1 className="title">Products</h1>
                     <div className="products-main">
                         {map}
                     </div>
                 </div>
             </div>
-        )
+        ) : (
+                <div>
+                    <Header />
+                    <div className="products">
+                        <h1 className="title">Products</h1>
+                        <div className="products-main">
+                            {map}
+                        </div>
+                    </div>
+                </div>
+            )
     }
 }
 
-export default Products
+let mapToState = (reduxState) => reduxState
+
+export default connect(mapToState, { getData })(Products)

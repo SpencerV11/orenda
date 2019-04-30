@@ -1,31 +1,21 @@
-
-
 .reviews-main {
     width: 90%;
-    height: 100vh;
     background-color: lightgray;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    /* 1fr 1fr 1fr 1fr 1fr; */
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     
     border: 4px solid black;
     border-radius: 5px;
+    margin: 20px;
 }
 
 .create-review {
     width: 100%;
-    height: 20vh;
-    background-color: gray;
-    border-bottom-left-radius: 100px;
-    border-bottom-right-radius: 100px;
+    height: 23vh;
+    background-color: rgb(250, 219, 219);
     margin-bottom: 10px;
-}
-
-.submit {
-    background-color: lightgray;
 }
 
 .review-flex {
@@ -37,5 +27,5 @@
 .review-title {
     border-bottom: 2px solid black;
     color: black;
-    margin-top: 15vh;
+    font-size: 25px;
 }

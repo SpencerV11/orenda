@@ -88,18 +88,19 @@ class Reviews extends Component {
         return (
             <div>
                 <Header />
+                <h1 className="link-title">Reviews</h1>
                 <div className="flex-review-main">
-                    <div className="create-review">
-                        <div className="review-flex">
-                            <h3 className="review-title">Submit a review to Carlee!</h3>
-                            <input value={this.state.description} name="description" onChange={(e) => this.handleChange('description', e.target.value)} placeholder="Description"></input>
-                            <input value={this.state.rating} name="rating" onChange={(e) => this.handleChange('rating', e.target.value)} placeholder="Rating 1 - 10"></input>
-                            <button onClick={() => this.createReview()} className="button submit">SUBMIT</button>
-                        </div>
-                    </div>
                     <div className="reviews-main">
 
                         {map}
+                    </div>
+                    <div className="create-review">
+                        <div className="review-flex">
+                            <h3 className="review-title">Submit a review to Carlee!</h3>
+                            <input className="input-style" value={this.state.description} name="description" onChange={(e) => this.handleChange('description', e.target.value)} placeholder="Description"></input>
+                            <input className="input-style" value={this.state.rating} name="rating" onChange={(e) => this.handleChange('rating', e.target.value)} placeholder="Rating 1 - 10"></input>
+                            <button onClick={() => this.createReview()} className="button">SUBMIT</button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -23,18 +23,29 @@
 
 .create-promo {
     width: 100%;
-    height: 8vh;
+    height: 10vh;
     background-color: silver;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     transition: 2s;
+}
+
+.link-title {
+    margin: 10px 0px;
+    letter-spacing: 4px;
 }
 
 @media (max-width: 414px) {
     .title {
         width: 100%;
+    }
+
+    .create-promo {
+        height: 25vh;
+        flex-direction: column;
+        justify-content: space-around;
     }
 }

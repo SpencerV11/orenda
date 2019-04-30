@@ -7,20 +7,21 @@
 
 .create-gallery {
     width: 100%;
-    height: 15vh;
+    height: 10vh;
     background-color: lightgray;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    border-bottom-left-radius: 100px;
-    border-bottom-right-radius: 100px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
 .flex-gall {
     display: flex;
     height: 25px;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    width: 100%;
 }
 
 .create-gall {
@@ -30,4 +31,18 @@
 .gallery-test-image {
     height: 100px;
     width: 100px;
+}
+
+@media(max-width: 414px) {
+    .create-gallery {
+        flex-direction: column;
+        justify-content: center;
+        height: 25vh;
+    }
+
+    .flex-gall {
+        flex-direction: column;
+        justify-content: space-around;
+        height: 25vh;
+    }
 }

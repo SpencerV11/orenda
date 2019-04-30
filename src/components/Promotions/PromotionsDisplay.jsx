@@ -60,7 +60,7 @@ class PromotionsDisplay extends Component {
                         <input className="margin-back" onChange={(e) => this.handleChange('promo_title', e.target.value)} value={this.state.promo_title} name="promo_title" placeholder="Promotion Title"></input>
                         <input onChange={(e) => this.handleChange('promo_desc', e.target.value)} value={this.state.promo_desc} name="promo_desc" placeholder="Promotion Description"></input>
                         <input onChange={(e) => this.handleChange('promo_exp', e.target.value)} value={this.state.promo_exp} name="promo_exp" placeholder="Expiration Date"></input>
-                        <button onClick={this.handleEdit}>Submit</button>
+                        <button className="button" onClick={this.handleEdit}>Submit</button>
                     </div>
                 ) : (
                         <div className="circle-display">

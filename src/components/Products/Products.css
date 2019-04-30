@@ -25,10 +25,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .flex-test-image {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media(max-width: 414px) {
+    .products-main {
+        width: 100%;
+    }
+    
+    .under-header {
+        height: 25vh;
+        flex-direction: column; 
+    }
+    
+
 }

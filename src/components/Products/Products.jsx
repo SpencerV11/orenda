@@ -132,7 +132,6 @@ class Products extends Component {
                     <input className="input-style" onChange={(e) => this.handleChange('product_line', e.target.value)} name="product_line" value={this.state.product_line} placeholder="Product Line"></input>
                     <input className="input-style" onChange={(e) => this.handleChange('product_desc', e.target.value)} name="product_desc" value={this.state.product_desc} placeholder="Product Description"></input>
                     <div className="flex-test-image">
-                        <img src={url} alt="" width="100px" height="90px" />
                         <Dropzone
                             onDropAccepted={this.getSignedRequest}
                             style={{
@@ -161,10 +160,10 @@ class Products extends Component {
                             )}
                         </Dropzone>
                     </div>
-                    <button onClick={this.createProduct}>Create</button>
+                    <button className="button" onClick={this.createProduct}>Create</button>
                 </div>
                 <div className="products">
-                    <h1 className="title">Products</h1>
+                    <h1 className="link-title">Products</h1>
                     <div className="products-main">
                         {map}
                     </div>
@@ -174,7 +173,7 @@ class Products extends Component {
                 <div>
                     <Header />
                     <div className="products">
-                        <h1 className="title">Products</h1>
+                        <h1 className="link-title">Products</h1>
                         <div className="products-main">
                             {map}
                         </div>

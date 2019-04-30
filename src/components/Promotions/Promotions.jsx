@@ -86,9 +86,9 @@ class Promotions extends Component {
                         <input onChange={(e) => this.handleChange('promo_title', e.target.value)} name="promo_title" value={this.state.promo_title} placeholder="Promotion Title"></input>
                         <input onChange={(e) => this.handleChange('promo_desc', e.target.value)} name="promo_desc" value={this.state.promo_desc} placeholder="Promotion Description"></input>
                         <input onChange={(e) => this.handleChange('promo_exp', e.target.value)} name="promo_exp" value={this.state.promo_exp} placeholder="Expiration Date"></input>
-                        <button onClick={this.createPromotion}>Submit</button>
+                        <button className="button" onClick={this.createPromotion}>Submit</button>
                     </div>
-                    <h1 className="title">Promotions</h1>
+                    <h1 className="link-title">Promotions</h1>
                     <div className="map-box">
                         {map}
                     </div>
@@ -99,7 +99,7 @@ class Promotions extends Component {
                 <div>
                     <Header />
                     <div className="display-promo">
-                        <h1 className="title">Promotions</h1>
+                        <h1 className="link-title">Promotions</h1>
                         <div className="map-box">
                             {map}
                         </div>

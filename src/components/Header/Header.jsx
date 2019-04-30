@@ -196,7 +196,7 @@ class Header extends Component {
                     {/* //LOGIN CONDITIONAL RENDERING */}
                     <div className={login ? 'login' : 'login gone2'}>
                         <input value={this.state.login_email} name="login_email" onChange={(e) => this.handleChange('login_email', e.target.value)} className="input-style" placeholder="Email"></input>
-                        <input value={this.state.login_password} name="login_password" onChange={(e) => this.handleChange('login_password', e.target.value)} className="input-style" placeholder="Password"></input>
+                        <input type="password" value={this.state.login_password} name="login_password" onChange={(e) => this.handleChange('login_password', e.target.value)} className="input-style" placeholder="Password"></input>
                         <button onClick={() => this.login()} className="button space">Login</button>
                     </div>
                 </div>

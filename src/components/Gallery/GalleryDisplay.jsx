@@ -30,7 +30,7 @@ class GalleryDisplay extends Component {
                     <img className="img-size" src={this.props.gallery.before_after_img} alt=""></img>
                 </div>
                 <div className="flex-desc">
-                    <div className="gallery-title">{this.props.gallery.gallery_service_title}</div>
+                    <h4 className="gallery-title">{this.props.gallery.gallery_service_title}</h4>
                     <div className="gallery-desc">{this.props.gallery.description}</div>
                 </div>
 

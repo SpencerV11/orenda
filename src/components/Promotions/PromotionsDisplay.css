@@ -48,12 +48,12 @@
     margin-bottom: 20px;
     width: 250px;
     display: flex;
-    justify-content: space-between; 
+    justify-content: center; 
 }
 
 .promo-desc {
     margin: 0px 20px;
-    text-indent: 50px;
+    /* text-indent: 50px; */
 }
 
 .margin-back {
@@ -62,6 +62,16 @@
 
 @media(max-width: 414px) {
     .circle-display {
+        width: 400px;
+        height: 370px;
+    }
+
+    .promo-date-delete-edit {
+        justify-content: space-between;
+        width: 80%;
+    }
+
+    .circle-display-toggled {
         width: 400px;
         height: 370px;
     }

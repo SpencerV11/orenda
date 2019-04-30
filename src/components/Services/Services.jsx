@@ -82,12 +82,13 @@ class Services extends Component {
             <div>
                 <Header />
                 <div className="create-center">
-                    <input value={this.state.time_limit} name="time_limit" onChange={(e) => this.handleChange('time_limit', e.target.value)} placeholder="Time limit of service"></input>
-                    <input value={this.state.service_cost} name="service_cost" onChange={(e) => this.handleChange('service_cost', e.target.value)}  placeholder="Cost of service"></input>
-                    <input value={this.state.service_title} name="service_title" onChange={(e) => this.handleChange('service_title', e.target.value)}  placeholder="Service Title"></input>
-                    <input value={this.state.service_desc} name="service_desc" onChange={(e) => this.handleChange('service_desc', e.target.value)}  placeholder="Service Description"></input>
+                    <input className="input-style" value={this.state.time_limit} name="time_limit" onChange={(e) => this.handleChange('time_limit', e.target.value)} placeholder="Time limit of service"></input>
+                    <input className="input-style" value={this.state.service_cost} name="service_cost" onChange={(e) => this.handleChange('service_cost', e.target.value)}  placeholder="Cost of service"></input>
+                    <input className="input-style" value={this.state.service_title} name="service_title" onChange={(e) => this.handleChange('service_title', e.target.value)}  placeholder="Service Title"></input>
+                    <input className="input-style" value={this.state.service_desc} name="service_desc" onChange={(e) => this.handleChange('service_desc', e.target.value)}  placeholder="Service Description"></input>
                     <button onClick={this.createService} className="button">Create Service</button>
                 </div>
+                <h1 className="link-title">Services</h1>
                 <div className="services-main">
                     {map}
                     {/* </div> */}
@@ -96,6 +97,7 @@ class Services extends Component {
         ) :
             <div>
                 <Header />
+                <h1 className="link-title">Services</h1>
                 <div className="services-main">
                     {map}
                     {/* </div> */}

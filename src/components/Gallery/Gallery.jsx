@@ -124,9 +124,8 @@ class Gallery extends Component {
                     {/* //AMAZON S3--------------------------------------------------------------------------------- */}
                     <div>
                         <div className="flex-gall">
-                            <input value={this.state.gallery_service_title} name="gallery_service_title" onChange={(e) => this.handleChange('gallery_service_title', e.target.value)} placeholder="Service Title"></input>
-                            <input value={this.state.description} name="description" onChange={(e) => this.handleChange('description', e.target.value)} placeholder="Service Description"></input>
-                            <img className="gallery-test-image" src={url} alt="" width="200px" />
+                            <input className="input-style" value={this.state.gallery_service_title} name="gallery_service_title" onChange={(e) => this.handleChange('gallery_service_title', e.target.value)} placeholder="Service Title"></input>
+                            <input className="input-style" value={this.state.description} name="description" onChange={(e) => this.handleChange('description', e.target.value)} placeholder="Service Description"></input>
                             <Dropzone
                                 onDropAccepted={this.getSignedRequest}
                                 style={{
@@ -163,6 +162,7 @@ class Gallery extends Component {
         ) : (
                 <div>
                     <Header />
+                    <h1 className="link-title">Gallery</h1>
                     {map}
                 </div>
             )

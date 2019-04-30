@@ -32,7 +32,7 @@ class ProductsDisplay extends Component {
                     <div className="product-title">{this.props.product.product_line}</div>
                     <div className="product-desc">{this.props.product.product_desc}</div>
                     <div className="product-edit-delete">
-                        <button onClick={() => this.handleDelete()}>X</button>
+                        <button className="button" onClick={() => this.handleDelete()}>X</button>
                     </div>
                 </div>
                 <img className="product-image" src={this.props.product.url} alt="" width="300px" />
@@ -42,6 +42,7 @@ class ProductsDisplay extends Component {
                     <div className="center-product-title">
                         <div className="product-title">{this.props.product.product_line}</div>
                         <div className="product-desc">{this.props.product.product_desc}</div>
+                        <button className="free-cons button">Book A FREE Consultation</button>
                     </div>
                     <img className="product-image" src={this.props.product.url} alt="" width="300px" />
                 </div>

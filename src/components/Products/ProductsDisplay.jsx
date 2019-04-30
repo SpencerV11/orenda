@@ -42,7 +42,7 @@ class ProductsDisplay extends Component {
                     <div className="center-product-title">
                         <div className="product-title">{this.props.product.product_line}</div>
                         <div className="product-desc">{this.props.product.product_desc}</div>
-                        <button className="free-cons button">Book A FREE Consultation</button>
+                        <a href="square.site/book/65MKAGB7STQRQ/orenda-aesthetics-idaho-falls-id"><button className="free-cons button">Book A FREE Consultation</button></a>
                     </div>
                     <img className="product-image" src={this.props.product.url} alt="" width="300px" />
                 </div>

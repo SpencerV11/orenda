@@ -95,7 +95,7 @@ class ServicesDisplay extends Component {
                     <div className="services-book">
                         <div className="service-desc">{this.props.services.service_desc}</div>
                     </div>
-                    <button className="button button2">Book Now</button>
+                    <a href="https://square.site/book/65MKAGB7STQRQ/orenda-aesthetics-idaho-falls-id"><button className="button button2">Book Now</button></a>
                 </div>
             </div>
     }

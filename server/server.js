@@ -45,7 +45,6 @@ app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 app.get('/auth/client-data', authCtrl.clientData)
 app.get('/logout', (req, res) => {
-    console.log('hit')
     req.session.destroy()
 })
 

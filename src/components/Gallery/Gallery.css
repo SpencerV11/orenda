@@ -37,7 +37,7 @@
     .create-gallery {
         flex-direction: column;
         justify-content: center;
-        height: 25vh;
+        height: 30vh;
     }
 
     .flex-gall {

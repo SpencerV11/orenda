@@ -3,7 +3,7 @@
     height: 10vh;
     background-color: lightgray;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin-bottom: 20px;
     border-bottom-left-radius: 40px;

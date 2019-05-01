@@ -13,14 +13,14 @@ module.exports = {
     create: async (req, res) => {
         let {description, rating } = req.body
         console.log(req.session.user)
-        let { client_id } = req.session.user
+        let { client_id, firstName, lastName } = req.session.user
         let db = req.app.get('db')
         let createReview = await db.create_review([ client_id, description, rating ])
         res.status(200).send(createReview)
         me.messages.create({
             to: '+18018360956',
             from: TWILIO_NUMBER,
-            body: 'Someone posted a review for you!'
+            body: `${firstName} ${lastName} posted a review for you!`
         })
         .then((message) => console.log(message.sid))
     },

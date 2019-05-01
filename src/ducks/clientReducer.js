@@ -20,10 +20,10 @@ export function getData() {
 }
 
 export function killClient() {
-    let data = axios.get('/logout')
+    axios.get('/logout')
     return {
         type: KILL_CLIENT,
-        payload: data
+        payload: {}
     }
 }
 

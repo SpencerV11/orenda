@@ -21,6 +21,7 @@
     "react-spinners": "^0.5.4",
     "redux": "^4.0.1",
     "redux-promise-middleware": "^6.1.0",
+    "twilio": "^3.30.2",
     "uuid": "^3.3.2"
   },
   "scripts": {

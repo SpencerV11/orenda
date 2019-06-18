@@ -1,68 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ORENDA AESTHETICS-
 
-## Available Scripts
+This website was build for a successful Ethetican.
 
-In the project directory, you can run:
+DESCRIPTIONS OF THE WEBPAGE-
 
-### `npm start`
+Home page-
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This page shows a carousel that goes through her workspace environment. It then focuses on her Promotions page, her Services page and her About Me page. She wanted these to be the main focus of the Home page. 
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Products page-
 
-### `npm test`
+This provides info on her products that she offers. It also gives a quick description of the product with a image of the product itself. You can link to a booking system to setup an appointment.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Services page- 
 
-### `npm run build`
+This page shows all of her services that she offers. It shows the pricing, how long the service normally takes and a brief description of the service. This page also allows you to link to her booking system where they can then schedule an appointment with the Ethetician.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Gallery page-
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+This page was to show the different services that have been done previously. Each post shows a before and after pick of a particular service as well as a short description of what went on. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Reviews page-
 
-### `npm run eject`
+Currently this page gives clients the ability to post reviews for the Master Esthetician. It will then send her a text telling her that someone had posted and who posted it. This page provides great value for the clients that are wanting to know more about the Master Ethetician and how other clients have felt regarding her services.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+About page-
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This page shows a pictures of the Ethetician. It cotains a quick description of the "why" behind her name Orenda Aesthetics. This About page also shares a description about the Esthetician what what she is all about.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+NOTE-
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This project has an admin side for the Master Ethetican to provide changes to the website. These changes include: 
+deleting, updating, and creating posts on the different pages.
